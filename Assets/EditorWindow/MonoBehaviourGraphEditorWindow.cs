@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-public class MonoBehaviourGraphWindow : EditorWindow
+namespace EditorWindow
+{
+    public class MonoBehaviourGraphWindow : UnityEditor.EditorWindow
 {
     private Vector2 _scrollPosition;
     private float _zoomLevel = 1f;
     private Vector2 _graphOffset;
-    private Dictionary<Component, NodeInfo> _nodeInfos = new Dictionary<Component, NodeInfo>();
+    private readonly Dictionary<Component, NodeInfo> _nodeInfos = new();
     private Component _selectedNode;
     private bool _includeInactiveObjects = true;
     private bool _includeBuiltInComponents = true;
@@ -17,8 +19,8 @@ public class MonoBehaviourGraphWindow : EditorWindow
     private class NodeInfo
     {
         public Rect Position;
-        public List<Component> Inputs = new List<Component>();
-        public List<Component> Outputs = new List<Component>();
+        public readonly List<Component> Inputs = new();
+        public readonly List<Component> Outputs = new();
         public bool IsActive;
         public bool IsBuiltIn;
     }
@@ -46,15 +48,16 @@ public class MonoBehaviourGraphWindow : EditorWindow
         DrawGraph();
         EditorGUILayout.EndScrollView();
 
-        if (_selectedNode != null)
+        if (_selectedNode)
         {
             GUILayout.Space(10);
             EditorGUILayout.LabelField("Selected: " + _selectedNode.GetType().Name, EditorStyles.boldLabel);
-            Editor editor = Editor.CreateEditor(_selectedNode);
+            var editor = Editor.CreateEditor(_selectedNode);
             editor.OnInspectorGUI();
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private void GenerateGraph()
     {
         _nodeInfos.Clear();
@@ -70,7 +73,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
             {
                 _nodeInfos[component] = new NodeInfo
                 {
-                    IsActive = component.gameObject.activeInHierarchy && (!(component is Behaviour) || ((Behaviour)component).enabled),
+                    IsActive = component.gameObject.activeInHierarchy && (!(component is Behaviour behaviour) || behaviour.enabled),
                     IsBuiltIn = isBuiltIn
                 };
             }
@@ -118,10 +121,10 @@ public class MonoBehaviourGraphWindow : EditorWindow
             if (typeof(Component).IsAssignableFrom(field.FieldType))
             {
                 Component connectedComponent = field.GetValue(component) as Component;
-                if (connectedComponent != null && _nodeInfos.ContainsKey(connectedComponent))
+                if (connectedComponent && _nodeInfos.TryGetValue(connectedComponent, out var info))
                 {
                     _nodeInfos[component].Outputs.Add(connectedComponent);
-                    _nodeInfos[connectedComponent].Inputs.Add(component);
+                    info.Inputs.Add(component);
                 }
             }
         }
@@ -129,10 +132,10 @@ public class MonoBehaviourGraphWindow : EditorWindow
         // Check for connections through GameObject
         foreach (Component otherComponent in component.gameObject.GetComponents<Component>())
         {
-            if (otherComponent != component && _nodeInfos.ContainsKey(otherComponent))
+            if (otherComponent != component && _nodeInfos.TryGetValue(otherComponent, out var info))
             {
                 _nodeInfos[component].Outputs.Add(otherComponent);
-                _nodeInfos[otherComponent].Inputs.Add(component);
+                info.Inputs.Add(component);
             }
         }
     }
@@ -173,7 +176,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
 
     private void DrawNode(Component component, NodeInfo info)
     {
-        Rect scaledRect = ScaleRect(info.Position);
+        var scaledRect = ScaleRect(info.Position);
         
         // Set color based on component type and active state
         if (info.IsBuiltIn)
@@ -184,9 +187,11 @@ public class MonoBehaviourGraphWindow : EditorWindow
         GUI.Box(scaledRect, "");
         GUI.color = Color.white;
 
-        GUIStyle style = new GUIStyle(GUI.skin.label);
-        style.alignment = TextAnchor.UpperCenter;
-        style.fontStyle = FontStyle.Bold;
+        GUIStyle style = new GUIStyle(GUI.skin.label)
+        {
+            alignment = TextAnchor.UpperCenter,
+            fontStyle = FontStyle.Bold
+        };
         GUI.Label(new Rect(scaledRect.x, scaledRect.y + 5, scaledRect.width, 20), component.GetType().Name, style);
 
         style.fontStyle = FontStyle.Normal;
@@ -265,4 +270,5 @@ public class MonoBehaviourGraphWindow : EditorWindow
             original.height * _zoomLevel
         );
     }
+}
 }
