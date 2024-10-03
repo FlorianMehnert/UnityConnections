@@ -19,6 +19,8 @@ namespace EditorWindow
         private bool _showEqualComponents = true;
         private bool _graphNeedsUpdate = true;
         private bool _isDragging;
+        private Component _draggedNode;
+        private Vector2 _dragOffset;
 
         private class NodeInfo
         {
@@ -108,6 +110,19 @@ namespace EditorWindow
                 DestroyImmediate(editor);
             }
         }
+        
+        private Component GetNodeAtPosition(Vector2 mousePosition)
+        {
+            foreach (var kvp in _nodeInfos)
+            {
+                Rect scaledRect = ScaleRect(kvp.Value.Position);
+                if (scaledRect.Contains(mousePosition))
+                {
+                    return kvp.Key;
+                }
+            }
+            return null;
+        }
 
         private void HandleEvents()
         {
@@ -126,26 +141,47 @@ namespace EditorWindow
                     break;
 
                 case EventType.MouseDown:
-                    if (e.button == 2) // Middle mouse button
+                    if (e.button == 2) // Middle mouse button for graph dragging
                     {
                         _isDragging = true;
                         e.Use();
                     }
+                    else if (e.button == 0) // Left mouse button for selecting/moving nodes
+                    {
+                        _draggedNode = GetNodeAtPosition(e.mousePosition);
+                        if (_draggedNode != null)
+                        {
+                            _dragOffset = e.mousePosition - ScaleRect(_nodeInfos[_draggedNode].Position).position;
+                            _selectedNode = _draggedNode;
+                            e.Use();
+                        }
+                    }
                     break;
 
                 case EventType.MouseDrag:
-                    if (_isDragging)
+                    if (_isDragging) // Graph dragging
                     {
                         _graphOffset += e.delta;
+                        e.Use();
+                        Repaint();
+                    }
+                    else if (_draggedNode) // Node dragging
+                    {
+                        _nodeInfos[_draggedNode].Position.position = (e.mousePosition - _dragOffset) / _zoomLevel - _graphOffset;
                         e.Use();
                         Repaint();
                     }
                     break;
 
                 case EventType.MouseUp:
-                    if (e.button == 2)
+                    if (e.button == 2) // Stop dragging graph
                     {
                         _isDragging = false;
+                        e.Use();
+                    }
+                    else if (e.button == 0) // Stop dragging node
+                    {
+                        _draggedNode = null;
                         e.Use();
                     }
                     break;
