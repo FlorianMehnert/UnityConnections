@@ -16,8 +16,9 @@ namespace EditorWindow
         private Component _selectedNode;
         private bool _includeInactiveObjects = true;
         private bool _includeBuiltInComponents = true;
+        private bool _showEqualComponents = true;
         private bool _graphNeedsUpdate = true;
-        private bool _isDragging = false;
+        private bool _isDragging;
 
         private class NodeInfo
         {
@@ -75,11 +76,13 @@ namespace EditorWindow
             }
             bool newIncludeInactive = EditorGUILayout.ToggleLeft("Include Inactive", _includeInactiveObjects);
             bool newIncludeBuiltIn = EditorGUILayout.ToggleLeft("Include Built-in", _includeBuiltInComponents);
+            bool newShowEqualComponents = EditorGUILayout.ToggleLeft("Include Equal Components", _showEqualComponents);
             
-            if (newIncludeInactive != _includeInactiveObjects || newIncludeBuiltIn != _includeBuiltInComponents)
+            if (newIncludeInactive != _includeInactiveObjects || newIncludeBuiltIn != _includeBuiltInComponents || newShowEqualComponents != _showEqualComponents)
             {
                 _includeInactiveObjects = newIncludeInactive;
                 _includeBuiltInComponents = newIncludeBuiltIn;
+                _showEqualComponents = newShowEqualComponents;
                 _graphNeedsUpdate = true;
             }
             
@@ -409,13 +412,39 @@ namespace EditorWindow
                 if (_nodeInfos.TryGetValue(connectedComponent, out NodeInfo connectedInfo))
                 {
                     Rect endRect = ScaleRect(connectedInfo.Position);
-                    DrawConnectionLine(startRect.center, endRect.center, 
-                        connectedComponent.gameObject == component.gameObject ? Color.green : Color.blue);
+                    if (connectedComponent.gameObject == component.gameObject)
+                    {
+                        if (_showEqualComponents)
+                        {
+                            DrawConnectionLine(GetConnector(startRect, false), GetConnector(endRect, true), Color.green);
+                        }
+                    }
+                    else
+                    {
+                        DrawConnectionLine(GetConnector(startRect, false), GetConnector(endRect, true), Color.blue);
+                    }
                 }
             }
         }
     }
 
+    /// <summary>
+    /// Get the Position of the left/right connector
+    /// </summary>
+    /// <param name="rect">rectangle for which to calculate connector positions</param>
+    /// <param name="left">return left connector if <c>true</c> and right connector if <c>false</c></param>
+    /// <returns></returns>
+    private Vector2 GetConnector(Rect rect, bool left)
+    {
+        return new Vector2(left ? rect.x : rect.x + rect.width, rect.center.y);
+    }
+
+    /// <summary>
+    /// Connects two nodes together defined by start and end using a Bézier curve
+    /// </summary>
+    /// <param name="start">Vector2 defining the start of the connection</param>
+    /// <param name="end">Vector2 defining the end of the connection</param>
+    /// <param name="color">color of the connection</param>
     private void DrawConnectionLine(Vector2 start, Vector2 end, Color color)
     {
         Handles.BeginGUI();
@@ -423,7 +452,11 @@ namespace EditorWindow
         Handles.DrawBezier(start, end, start + Vector2.right * 50, end - Vector2.right * 50, color, null, 4f);
         Handles.EndGUI();
     }
-
+    /// <summary>
+    /// calculates width based on Name of node
+    /// </summary>
+    /// <param name="component">mostly nodes should be inserted in here</param>
+    /// <returns><c>Vector2</c> containing width and height of the component</returns>
     private Vector2 CalculateNodeSize(Component component)
     {
         float width = Mathf.Max(GUI.skin.box.CalcSize(new GUIContent(component.GetType().Name)).x + 20, 120);
@@ -431,6 +464,10 @@ namespace EditorWindow
         return new Vector2(width, height);
     }
 
+    /// <summary>
+    /// Method which returns a newly translated and scaled rectangle based on offset and scaling
+    /// based on <c>_graphOffset</c> and <c>_zoomLevel</c>
+    /// </summary>
     private Rect ScaleRect(Rect original)
     {
         return new Rect(
