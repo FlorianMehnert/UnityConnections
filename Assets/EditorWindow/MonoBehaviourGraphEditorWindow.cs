@@ -16,7 +16,8 @@ namespace EditorWindow
         private Component _selectedNode;
         private bool _includeInactiveObjects = true;
         private bool _includeBuiltInComponents = true;
-        private bool _showGraph = true;
+        private bool _graphNeedsUpdate = true;
+        private bool _isDragging = false;
 
         private class NodeInfo
         {
@@ -33,11 +34,35 @@ namespace EditorWindow
             public List<Component> Components = new();
             public bool IsBuiltIn;
         }
-
-        [MenuItem("Window/MonoBehaviour Graph")]
-        public static void ShowWindow()
+        
+        private void OnEnable()
         {
-            GetWindow<MonoBehaviourGraphWindow>("MonoBehaviour Graph");
+            // Subscribe to Unity's update event
+            EditorApplication.update += OnEditorUpdate;
+        }
+        
+        private void OnDisable()
+        {
+            // Unsubscribe from Unity's update event
+            EditorApplication.update -= OnEditorUpdate;
+        }
+
+        private void OnEditorUpdate()
+        {
+            // Check if any relevant changes have occurred in the scene
+            if (CheckForSceneChanges())
+            {
+                _graphNeedsUpdate = true;
+                Repaint();
+            }
+        }
+        
+        private bool CheckForSceneChanges()
+        {
+            // Implement logic to check for relevant changes in the scene
+            // For example, check if any GameObjects or Components have been added/removed/modified
+            // Return true if changes are detected, false otherwise
+            return UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().isDirty;
         }
 
         private void OnGUI()
@@ -46,15 +71,28 @@ namespace EditorWindow
             if (GUILayout.Button("Generate Graph"))
             {
                 GenerateGraph();
+                _graphNeedsUpdate = false;
             }
-            _includeInactiveObjects = EditorGUILayout.ToggleLeft("Include Inactive", _includeInactiveObjects);
-            _includeBuiltInComponents = EditorGUILayout.ToggleLeft("Include Built-in", _includeBuiltInComponents);
-            _showGraph = EditorGUILayout.ToggleLeft("Showoff Graph", _showGraph);
+            bool newIncludeInactive = EditorGUILayout.ToggleLeft("Include Inactive", _includeInactiveObjects);
+            bool newIncludeBuiltIn = EditorGUILayout.ToggleLeft("Include Built-in", _includeBuiltInComponents);
+            
+            if (newIncludeInactive != _includeInactiveObjects || newIncludeBuiltIn != _includeBuiltInComponents)
+            {
+                _includeInactiveObjects = newIncludeInactive;
+                _includeBuiltInComponents = newIncludeBuiltIn;
+                _graphNeedsUpdate = true;
+            }
+            
             EditorGUILayout.EndHorizontal();
 
             HandleEvents();
 
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
+            if (_graphNeedsUpdate)
+            {
+                GenerateGraph();
+                _graphNeedsUpdate = false;
+            }
             DrawGraph();
             EditorGUILayout.EndScrollView();
 
@@ -62,9 +100,76 @@ namespace EditorWindow
             {
                 GUILayout.Space(10);
                 EditorGUILayout.LabelField("Selected: " + _selectedNode.GetType().Name, EditorStyles.boldLabel);
-                var editor = Editor.CreateEditor(_selectedNode);
+                Editor editor = Editor.CreateEditor(_selectedNode);
                 editor.OnInspectorGUI();
+                DestroyImmediate(editor);
             }
+        }
+
+        private void HandleEvents()
+        {
+            Event e = Event.current;
+
+            switch (e.type)
+            {
+                case EventType.ScrollWheel:
+                    float prevZoom = _zoomLevel;
+                    _zoomLevel = Mathf.Clamp(_zoomLevel - e.delta.y * 0.01f, 0.1f, 2f);
+                    if (prevZoom != _zoomLevel)
+                    {
+                        e.Use();
+                        Repaint();
+                    }
+                    break;
+
+                case EventType.MouseDown:
+                    if (e.button == 2) // Middle mouse button
+                    {
+                        _isDragging = true;
+                        e.Use();
+                    }
+                    break;
+
+                case EventType.MouseDrag:
+                    if (_isDragging)
+                    {
+                        _graphOffset += e.delta;
+                        e.Use();
+                        Repaint();
+                    }
+                    break;
+
+                case EventType.MouseUp:
+                    if (e.button == 2)
+                    {
+                        _isDragging = false;
+                        e.Use();
+                    }
+                    break;
+            }
+        }
+
+        private void DrawGraph()
+        {
+            if (Event.current.type == EventType.Repaint)
+            {
+                DrawConnections();
+                foreach (var groupKvp in _groupInfos)
+                {
+                    DrawGroup(groupKvp.Key, groupKvp.Value);
+                }
+                foreach (var kvp in _nodeInfos)
+                {
+                    DrawNode(kvp.Key, kvp.Value);
+                }
+            }
+        }
+
+
+        [MenuItem("Window/MonoBehaviour Graph")]
+        public static void ShowWindow()
+        {
+            GetWindow<MonoBehaviourGraphWindow>("MonoBehaviour Graph");
         }
 
         private void GenerateGraph()
@@ -149,24 +254,7 @@ namespace EditorWindow
                 maxHeight = Mathf.Max(maxHeight, groupSize.y);
             }
         }
-
-
-        private void DrawGraph()
-        {
-            if (Event.current.type == EventType.Repaint)
-            {
-                DrawConnections();
-                foreach (var groupKvp in _groupInfos)
-                {
-                    DrawGroup(groupKvp.Key, groupKvp.Value);
-                }
-                foreach (var kvp in _nodeInfos)
-                {
-                    DrawNode(kvp.Key, kvp.Value);
-                }
-            }
-        }
-
+        
         private void DrawGroup(System.Type groupType, GroupInfo groupInfo)
         {
             var scaledRect = ScaleRect(groupInfo.Position);
@@ -332,7 +420,7 @@ namespace EditorWindow
     {
         Handles.BeginGUI();
         Handles.color = color;
-        Handles.DrawBezier(start, end, start + Vector2.right * 50, end - Vector2.right * 50, color, null, 2f);
+        Handles.DrawBezier(start, end, start + Vector2.right * 50, end - Vector2.right * 50, color, null, 4f);
         Handles.EndGUI();
     }
 
@@ -341,23 +429,6 @@ namespace EditorWindow
         float width = Mathf.Max(GUI.skin.box.CalcSize(new GUIContent(component.GetType().Name)).x + 20, 120);
         float height = 75;
         return new Vector2(width, height);
-    }
-
-    private void HandleEvents()
-    {
-        if (Event.current.type == EventType.ScrollWheel)
-        {
-            _zoomLevel = Mathf.Clamp(_zoomLevel - Event.current.delta.y * 0.01f, 0.1f, 2f);
-            Event.current.Use();
-            Repaint();
-        }
-
-        if (Event.current.type == EventType.MouseDrag && Event.current.button == 2)
-        {
-            _graphOffset += Event.current.delta;
-            Event.current.Use();
-            Repaint();
-        }
     }
 
     private Rect ScaleRect(Rect original)
