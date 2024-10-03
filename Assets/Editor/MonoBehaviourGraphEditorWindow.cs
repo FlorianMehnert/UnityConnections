@@ -6,13 +6,13 @@ using System.Linq;
 
 public class MonoBehaviourGraphWindow : EditorWindow
 {
-    private Vector2 scrollPosition;
-    private float zoomLevel = 1f;
-    private Vector2 graphOffset;
-    private Dictionary<Component, NodeInfo> nodeInfos = new Dictionary<Component, NodeInfo>();
-    private Component selectedNode;
-    private bool includeInactiveObjects = true;
-    private bool includeBuiltInComponents = true;
+    private Vector2 _scrollPosition;
+    private float _zoomLevel = 1f;
+    private Vector2 _graphOffset;
+    private Dictionary<Component, NodeInfo> _nodeInfos = new Dictionary<Component, NodeInfo>();
+    private Component _selectedNode;
+    private bool _includeInactiveObjects = true;
+    private bool _includeBuiltInComponents = true;
 
     private class NodeInfo
     {
@@ -36,29 +36,29 @@ public class MonoBehaviourGraphWindow : EditorWindow
         {
             GenerateGraph();
         }
-        includeInactiveObjects = EditorGUILayout.ToggleLeft("Include Inactive", includeInactiveObjects);
-        includeBuiltInComponents = EditorGUILayout.ToggleLeft("Include Built-in", includeBuiltInComponents);
+        _includeInactiveObjects = EditorGUILayout.ToggleLeft("Include Inactive", _includeInactiveObjects);
+        _includeBuiltInComponents = EditorGUILayout.ToggleLeft("Include Built-in", _includeBuiltInComponents);
         EditorGUILayout.EndHorizontal();
 
         HandleEvents();
 
-        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+        _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
         DrawGraph();
         EditorGUILayout.EndScrollView();
 
-        if (selectedNode != null)
+        if (_selectedNode != null)
         {
             GUILayout.Space(10);
-            EditorGUILayout.LabelField("Selected: " + selectedNode.GetType().Name, EditorStyles.boldLabel);
-            Editor editor = Editor.CreateEditor(selectedNode);
+            EditorGUILayout.LabelField("Selected: " + _selectedNode.GetType().Name, EditorStyles.boldLabel);
+            Editor editor = Editor.CreateEditor(_selectedNode);
             editor.OnInspectorGUI();
         }
     }
 
     private void GenerateGraph()
     {
-        nodeInfos.Clear();
-        Component[] allComponents = includeInactiveObjects 
+        _nodeInfos.Clear();
+        Component[] allComponents = _includeInactiveObjects 
             ? Resources.FindObjectsOfTypeAll<Component>()
             : FindObjectsOfType<Component>();
 
@@ -66,9 +66,9 @@ public class MonoBehaviourGraphWindow : EditorWindow
         foreach (Component component in allComponents)
         {
             bool isBuiltIn = IsBuiltInComponent(component);
-            if (includeBuiltInComponents || !isBuiltIn)
+            if (_includeBuiltInComponents || !isBuiltIn)
             {
-                nodeInfos[component] = new NodeInfo
+                _nodeInfos[component] = new NodeInfo
                 {
                     IsActive = component.gameObject.activeInHierarchy && (!(component is Behaviour) || ((Behaviour)component).enabled),
                     IsBuiltIn = isBuiltIn
@@ -77,7 +77,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
         }
 
         // Second pass: analyze connections
-        foreach (Component component in nodeInfos.Keys.ToList())
+        foreach (Component component in _nodeInfos.Keys.ToList())
         {
             AnalyzeConnections(component);
         }
@@ -118,10 +118,10 @@ public class MonoBehaviourGraphWindow : EditorWindow
             if (typeof(Component).IsAssignableFrom(field.FieldType))
             {
                 Component connectedComponent = field.GetValue(component) as Component;
-                if (connectedComponent != null && nodeInfos.ContainsKey(connectedComponent))
+                if (connectedComponent != null && _nodeInfos.ContainsKey(connectedComponent))
                 {
-                    nodeInfos[component].Outputs.Add(connectedComponent);
-                    nodeInfos[connectedComponent].Inputs.Add(component);
+                    _nodeInfos[component].Outputs.Add(connectedComponent);
+                    _nodeInfos[connectedComponent].Inputs.Add(component);
                 }
             }
         }
@@ -129,10 +129,10 @@ public class MonoBehaviourGraphWindow : EditorWindow
         // Check for connections through GameObject
         foreach (Component otherComponent in component.gameObject.GetComponents<Component>())
         {
-            if (otherComponent != component && nodeInfos.ContainsKey(otherComponent))
+            if (otherComponent != component && _nodeInfos.ContainsKey(otherComponent))
             {
-                nodeInfos[component].Outputs.Add(otherComponent);
-                nodeInfos[otherComponent].Inputs.Add(component);
+                _nodeInfos[component].Outputs.Add(otherComponent);
+                _nodeInfos[otherComponent].Inputs.Add(component);
             }
         }
     }
@@ -143,7 +143,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
         float y = 0;
         float maxHeight = 0;
 
-        foreach (var kvp in nodeInfos)
+        foreach (var kvp in _nodeInfos)
         {
             Vector2 nodeSize = CalculateNodeSize(kvp.Key);
             if (x + nodeSize.x > position.width)
@@ -164,7 +164,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
         if (Event.current.type == EventType.Repaint)
         {
             DrawConnections();
-            foreach (var kvp in nodeInfos)
+            foreach (var kvp in _nodeInfos)
             {
                 DrawNode(kvp.Key, kvp.Value);
             }
@@ -198,7 +198,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
         {
             if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
             {
-                selectedNode = component;
+                _selectedNode = component;
                 Repaint();
             }
         }
@@ -206,7 +206,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
 
     private void DrawConnections()
     {
-        foreach (var kvp in nodeInfos)
+        foreach (var kvp in _nodeInfos)
         {
             Component component = kvp.Key;
             NodeInfo info = kvp.Value;
@@ -214,7 +214,7 @@ public class MonoBehaviourGraphWindow : EditorWindow
 
             foreach (Component connectedComponent in info.Outputs)
             {
-                if (nodeInfos.TryGetValue(connectedComponent, out NodeInfo connectedInfo))
+                if (_nodeInfos.TryGetValue(connectedComponent, out NodeInfo connectedInfo))
                 {
                     Rect endRect = ScaleRect(connectedInfo.Position);
                     DrawConnectionLine(startRect.center, endRect.center, 
@@ -243,14 +243,14 @@ public class MonoBehaviourGraphWindow : EditorWindow
     {
         if (Event.current.type == EventType.ScrollWheel)
         {
-            zoomLevel = Mathf.Clamp(zoomLevel - Event.current.delta.y * 0.01f, 0.1f, 2f);
+            _zoomLevel = Mathf.Clamp(_zoomLevel - Event.current.delta.y * 0.01f, 0.1f, 2f);
             Event.current.Use();
             Repaint();
         }
 
         if (Event.current.type == EventType.MouseDrag && Event.current.button == 2)
         {
-            graphOffset += Event.current.delta;
+            _graphOffset += Event.current.delta;
             Event.current.Use();
             Repaint();
         }
@@ -259,10 +259,10 @@ public class MonoBehaviourGraphWindow : EditorWindow
     private Rect ScaleRect(Rect original)
     {
         return new Rect(
-            (original.x + graphOffset.x) * zoomLevel,
-            (original.y + graphOffset.y) * zoomLevel,
-            original.width * zoomLevel,
-            original.height * zoomLevel
+            (original.x + _graphOffset.x) * _zoomLevel,
+            (original.y + _graphOffset.y) * _zoomLevel,
+            original.width * _zoomLevel,
+            original.height * _zoomLevel
         );
     }
 }
