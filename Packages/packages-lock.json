@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "com.github.siccity.xnode": {
-      "version": "https://github.com/siccity/xNode.git",
+    "com.alelievr.node-graph-processor": {
+      "version": "1.3.0",
       "depth": 0,
-      "source": "git",
+      "source": "registry",
       "dependencies": {},
-      "hash": "d6effd70f5574369e3415c423ef3e621ea309564"
+      "url": "https://package.openupm.com"
     },
     "com.unity.2d.animation": {
       "version": "9.1.1",

@@ -10,8 +10,8 @@ namespace EditorWindow
 {
     public class ComponentGraphViewer : UnityEditor.EditorWindow
     {
-        private ComponentGraphView graphView;
-        private bool isRefreshing = false;
+        private ComponentGraphView _graphView;
+        private bool _isRefreshing;
 
         [MenuItem("Window/Component Graph Viewer")]
         public static void OpenWindow()
@@ -23,18 +23,18 @@ namespace EditorWindow
 
         private void OnEnable()
         {
-            graphView = new ComponentGraphView(this);
-            rootVisualElement.Add(graphView);
+            _graphView = new ComponentGraphView(this);
+            rootVisualElement.Add(_graphView);
 
             var refreshButton = new Button(() =>
             {
-                if (!isRefreshing)
+                if (!_isRefreshing)
                 {
-                    isRefreshing = true;
+                    _isRefreshing = true;
                     EditorApplication.delayCall += () =>
                     {
-                        graphView.RefreshGraph();
-                        isRefreshing = false;
+                        _graphView.RefreshGraph();
+                        _isRefreshing = false;
                     };
                 }
             }) { text = "Refresh Graph" };
@@ -43,18 +43,16 @@ namespace EditorWindow
 
         private void OnDisable()
         {
-            rootVisualElement.Remove(graphView);
+            rootVisualElement.Remove(_graphView);
         }
     }
 
     public class ComponentGraphView : GraphView
     {
-        private ComponentGraphViewer editorWindow;
-        private Dictionary<System.Type, HashSet<System.Type>> componentRelations = new Dictionary<System.Type, HashSet<System.Type>>();
+        private readonly Dictionary<System.Type, HashSet<System.Type>> _componentRelations = new Dictionary<System.Type, HashSet<System.Type>>();
 
         public ComponentGraphView(ComponentGraphViewer window)
         {
-            editorWindow = window;
             SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
@@ -76,14 +74,14 @@ namespace EditorWindow
 
         private void PrecomputeComponentRelations()
         {
-            componentRelations.Clear();
+            _componentRelations.Clear();
             var componentTypes = TypeCache.GetTypesDerivedFrom<Component>();
 
             foreach (var type in componentTypes)
             {
-                if (!componentRelations.ContainsKey(type))
+                if (!_componentRelations.ContainsKey(type))
                 {
-                    componentRelations[type] = new HashSet<System.Type>();
+                    _componentRelations[type] = new HashSet<System.Type>();
                 }
 
                 var fields = type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
@@ -91,7 +89,7 @@ namespace EditorWindow
                 {
                     if (typeof(Component).IsAssignableFrom(field.FieldType))
                     {
-                        componentRelations[type].Add(field.FieldType);
+                        _componentRelations[type].Add(field.FieldType);
                     }
                 }
 
@@ -100,7 +98,7 @@ namespace EditorWindow
                 {
                     if (typeof(Component).IsAssignableFrom(property.PropertyType))
                     {
-                        componentRelations[type].Add(property.PropertyType);
+                        _componentRelations[type].Add(property.PropertyType);
                     }
                 }
 
@@ -111,7 +109,7 @@ namespace EditorWindow
                     {
                         if (typeof(Component).IsAssignableFrom(parameter.ParameterType))
                         {
-                            componentRelations[type].Add(parameter.ParameterType);
+                            _componentRelations[type].Add(parameter.ParameterType);
                         }
                     }
                 }
@@ -134,7 +132,7 @@ namespace EditorWindow
                 typeNodes[type] = node;
             }
 
-            foreach (var kvp in componentRelations)
+            foreach (var kvp in _componentRelations)
             {
                 if (typeNodes.TryGetValue(kvp.Key, out Node sourceNode))
                 {
