@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Edge = UnityEditor.Experimental.GraphView.Edge;
 
 namespace EditorWindow
 {
@@ -57,6 +58,7 @@ namespace EditorWindow
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
+            AddMiniMap();
 
             var gridBackground = new GridBackground();
             Insert(0, gridBackground);
@@ -194,7 +196,7 @@ namespace EditorWindow
             if (nodes.Count == 0) return;
 
             float padding = 20f;
-            float nodeWidth = 200f;
+            float nodeWidth = 400f;
             float nodeHeight = 100f;
 
             int cols = Mathf.CeilToInt(Mathf.Sqrt(nodes.Count));
@@ -210,6 +212,16 @@ namespace EditorWindow
 
                 nodes[i].SetPosition(new Rect(xPos, yPos, nodeWidth, nodeHeight));
             }
+        }
+
+        private void AddMiniMap()
+        {
+            MiniMap minimap = new MiniMap()
+            {
+                anchored = true
+            };
+            minimap.SetPosition(new Rect(15,50, 200, 100));
+            Add(minimap);
         }
     }
 }
