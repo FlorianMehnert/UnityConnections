@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-namespace EditorWindow
+namespace SceneConnections.EditorWindow
 {
     public class RectangleWindow : UnityEditor.EditorWindow
     {
