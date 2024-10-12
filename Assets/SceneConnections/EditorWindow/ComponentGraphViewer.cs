@@ -14,11 +14,11 @@ namespace SceneConnections.EditorWindow
         private ComponentGraphView _graphView;
         private bool _isRefreshing;
 
-        [MenuItem("Window/Component Graph Viewer")]
+        [MenuItem("Window/Instance-based Component Graph Viewer")]
         public static void OpenWindow()
         {
             ComponentGraphViewer window = GetWindow<ComponentGraphViewer>();
-            window.titleContent = new GUIContent("Component Graph");
+            window.titleContent = new GUIContent("Instance-based Component Graph");
             window.minSize = new Vector2(800, 600);
         }
 
@@ -50,11 +50,12 @@ namespace SceneConnections.EditorWindow
 
     public class ComponentGraphView : GraphView
     {
-        private readonly Dictionary<System.Type, HashSet<System.Type>> _componentRelations = new Dictionary<System.Type, HashSet<System.Type>>();
+        private Dictionary<Component, Node> _componentNodes = new Dictionary<Component, Node>();
+        private Dictionary<GameObject, Group> _gameObjectGroups = new Dictionary<GameObject, Group>();
 
         public ComponentGraphView(ComponentGraphViewer window)
         {
-            SetupZoom(0.1f, 2.0f);
+            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
@@ -70,91 +71,100 @@ namespace SceneConnections.EditorWindow
 
         public void RefreshGraph()
         {
-            PrecomputeComponentRelations();
+            ClearGraph();
             CreateComponentGraph();
         }
 
-        private void PrecomputeComponentRelations()
+        private void ClearGraph()
         {
-            _componentRelations.Clear();
-            var componentTypes = TypeCache.GetTypesDerivedFrom<Component>();
-
-            foreach (var type in componentTypes)
-            {
-                if (!_componentRelations.ContainsKey(type))
-                {
-                    _componentRelations[type] = new HashSet<System.Type>();
-                }
-
-                var fields = type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-                foreach (var field in fields)
-                {
-                    if (typeof(Component).IsAssignableFrom(field.FieldType))
-                    {
-                        _componentRelations[type].Add(field.FieldType);
-                    }
-                }
-
-                var properties = type.GetProperties(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-                foreach (var property in properties)
-                {
-                    if (typeof(Component).IsAssignableFrom(property.PropertyType))
-                    {
-                        _componentRelations[type].Add(property.PropertyType);
-                    }
-                }
-
-                var methods = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
-                foreach (var method in methods)
-                {
-                    foreach (var parameter in method.GetParameters())
-                    {
-                        if (typeof(Component).IsAssignableFrom(parameter.ParameterType))
-                        {
-                            _componentRelations[type].Add(parameter.ParameterType);
-                        }
-                    }
-                }
-            }
+            DeleteElements(graphElements.ToList());
+            _componentNodes.Clear();
+            _gameObjectGroups.Clear();
         }
 
         private void CreateComponentGraph()
         {
-            DeleteElements(graphElements.ToList());
+            var allGameObjects = GameObject.FindObjectsOfType<GameObject>();
 
-            Dictionary<System.Type, Node> typeNodes = new Dictionary<System.Type, Node>();
-            HashSet<(System.Type, System.Type)> addedEdges = new HashSet<(System.Type, System.Type)>();
-
-            var componentTypes = TypeCache.GetTypesDerivedFrom<Component>().Where(t => !t.IsAbstract);
-
-            foreach (var type in componentTypes)
+            foreach (var gameObject in allGameObjects)
             {
-                Node node = CreateComponentNode(type);
-                AddElement(node);
-                typeNodes[type] = node;
+                CreateGameObjectGroup(gameObject);
+
+                var components = gameObject.GetComponents<Component>();
+                foreach (var component in components)
+                {
+                    CreateComponentNode(component);
+                }
             }
 
-            foreach (var kvp in _componentRelations)
+            CreateEdges();
+            LayoutNodes();
+        }
+
+        private void CreateGameObjectGroup(GameObject gameObject)
+        {
+            var group = new Group
             {
-                if (typeNodes.TryGetValue(kvp.Key, out Node sourceNode))
+                title = gameObject.name,
+                userData = gameObject
+            };
+            AddElement(group);
+            _gameObjectGroups[gameObject] = group;
+        }
+
+        private void CreateComponentNode(Component component)
+        {
+            var node = new Node
+            {
+                title = component.GetType().Name,
+                userData = component
+            };
+
+            var inputPort = GeneratePort(node, Direction.Input, Port.Capacity.Multi);
+            node.inputContainer.Add(inputPort);
+
+            var outputPort = GeneratePort(node, Direction.Output, Port.Capacity.Multi);
+            node.outputContainer.Add(outputPort);
+
+            node.RegisterCallback<MouseDownEvent>(evt =>
+            {
+                if (evt.clickCount == 2)
                 {
-                    foreach (var relatedType in kvp.Value)
+                    Selection.activeObject = component;
+                    EditorGUIUtility.PingObject(component);
+                    evt.StopPropagation();
+                }
+            });
+
+            AddElement(node);
+            _componentNodes[component] = node;
+
+            if (_gameObjectGroups.TryGetValue(component.gameObject, out var group))
+            {
+                group.AddElement(node);
+            }
+        }
+
+        private void CreateEdges()
+        {
+            foreach (var kvp in _componentNodes)
+            {
+                var sourceComponent = kvp.Key;
+                var sourceNode = kvp.Value;
+
+                var fields = sourceComponent.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                foreach (var field in fields)
+                {
+                    if (typeof(Component).IsAssignableFrom(field.FieldType))
                     {
-                        if (typeNodes.TryGetValue(relatedType, out Node targetNode))
+                        var targetComponent = field.GetValue(sourceComponent) as Component;
+                        if (targetComponent != null && _componentNodes.TryGetValue(targetComponent, out var targetNode))
                         {
-                            var edgeKey = (kvp.Key, relatedType);
-                            if (!addedEdges.Contains(edgeKey))
-                            {
-                                CreateEdge(sourceNode, targetNode);
-                                addedEdges.Add(edgeKey);
-                            }
+                            CreateEdge(sourceNode, targetNode);
                         }
                     }
                 }
             }
-
-            LayoutNodes(typeNodes.Values.ToList());
-            FrameAll();
         }
 
         private void CreateEdge(Node sourceNode, Node targetNode)
@@ -169,58 +179,32 @@ namespace SceneConnections.EditorWindow
             AddElement(edge);
         }
 
-        private Node CreateComponentNode(System.Type componentType)
-        {
-            var node = new Node
-            {
-                title = componentType.Name,
-                userData = componentType
-            };
-
-            var inputPort = GeneratePort(node, Direction.Input, Port.Capacity.Multi);
-            node.inputContainer.Add(inputPort);
-
-            var outputPort = GeneratePort(node, Direction.Output, Port.Capacity.Multi);
-            node.outputContainer.Add(outputPort);
-
-            // Change to double-click event to open the ComponentInstanceEditor
-            node.RegisterCallback<MouseDownEvent>(evt =>
-            {
-                if (evt.clickCount == 2)
-                {
-                    ComponentInstanceEditor.OpenWindow(componentType);
-                    evt.StopPropagation();
-                }
-            });
-
-            return node;
-        }
-
         private Port GeneratePort(Node node, Direction direction, Port.Capacity capacity)
         {
             return node.InstantiatePort(Orientation.Horizontal, direction, capacity, typeof(Component));
         }
 
-        private void LayoutNodes(List<Node> nodes)
+        private void LayoutNodes()
         {
-            if (nodes.Count == 0) return;
-
-            float padding = 20f;
-            float nodeWidth = 400f;
-            float nodeHeight = 100f;
-
-            int cols = Mathf.CeilToInt(Mathf.Sqrt(nodes.Count));
-            int rows = Mathf.CeilToInt((float)nodes.Count / cols);
-
-            for (int i = 0; i < nodes.Count; i++)
+            foreach (var group in _gameObjectGroups.Values)
             {
-                int row = i / cols;
-                int col = i % cols;
+                group.UpdateGeometryFromContent();
+            }
 
-                float xPos = col * (nodeWidth + padding);
-                float yPos = row * (nodeHeight + padding);
-
-                nodes[i].SetPosition(new Rect(xPos, yPos, nodeWidth, nodeHeight));
+            // You may want to implement a more sophisticated layout algorithm here
+            // For now, we'll just spread out the groups
+            float x = 0;
+            float y = 0;
+            float padding = 50;
+            foreach (var group in _gameObjectGroups.Values)
+            {
+                group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
+                x += group.contentRect.width + padding;
+                if (x > 1000) // Arbitrary width to wrap
+                {
+                    x = 0;
+                    y += 300; // Arbitrary height for next row
+                }
             }
         }
 
@@ -230,10 +214,8 @@ namespace SceneConnections.EditorWindow
             {
                 anchored = true
             };
-            minimap.SetPosition(new Rect(15,50, 200, 100));
+            minimap.SetPosition(new Rect(15, 50, 200, 100));
             Add(minimap);
         }
-        
-        //private void Add
     }
 }
