@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace EditorWindow
 {
-    public class MonoBehaviourGraphWindow : UnityEditor.EditorWindow
+    public class RectangleWindow : UnityEditor.EditorWindow
     {
         private Vector2 _scrollPosition;
         private float _zoomLevel = 1f;
@@ -205,10 +205,10 @@ namespace EditorWindow
         }
 
 
-        [MenuItem("Window/MonoBehaviour Graph")]
+        [MenuItem("Window/Rectangle Graph Overview")]
         public static void ShowWindow()
         {
-            GetWindow<MonoBehaviourGraphWindow>("MonoBehaviour Graph");
+            GetWindow<RectangleWindow>("Rectangle Graph");
         }
 
         private void GenerateGraph()
