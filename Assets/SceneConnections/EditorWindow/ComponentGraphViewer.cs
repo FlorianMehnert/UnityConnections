@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using Edge = UnityEditor.Experimental.GraphView.Edge;
 
-namespace EditorWindow
+namespace SceneConnections.EditorWindow
 {
     public class ComponentGraphViewer : UnityEditor.EditorWindow
     {
