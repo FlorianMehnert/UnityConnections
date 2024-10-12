@@ -50,8 +50,8 @@ namespace SceneConnections.EditorWindow
 
     public class ComponentGraphView : GraphView
     {
-        private Dictionary<Component, Node> _componentNodes = new Dictionary<Component, Node>();
-        private Dictionary<GameObject, Group> _gameObjectGroups = new Dictionary<GameObject, Group>();
+        private readonly Dictionary<Component, Node> _componentNodes = new();
+        private readonly Dictionary<GameObject, Group> _gameObjectGroups = new();
 
         public ComponentGraphView(ComponentGraphViewer window)
         {
@@ -209,78 +209,68 @@ namespace SceneConnections.EditorWindow
         {
             return node.InstantiatePort(Orientation.Horizontal, direction, capacity, typeof(Component));
         }
-        
-        
+
 
         private void LayoutNodes()
-    {
-        var sortedGroups = _gameObjectGroups.OrderBy(kvp => kvp.Key.transform.GetHierarchyDepth());
-
-        float x = 0;
-        float y = 0;
-        float maxHeightInRow = 0;
-        float padding = 50; // Increased padding between groups
-        float maxWidth = 2000; // Increased max width to allow more groups per row
-
-        foreach (var kvp in sortedGroups)
         {
-            var group = kvp.Value;
-            LayoutNodesInGroup(group); // Layout nodes before calculating group size
-            group.UpdateGeometryFromContent();
+            var sortedGroups = _gameObjectGroups; //.OrderBy(kvp => kvp.Key.transform.GetHierarchyDepth());
 
-            // Check if the group exceeds the row width
-            if (x + group.contentRect.width > maxWidth)
+            float x = 0;
+            float y = 0;
+            float maxHeightInRow = 0;
+            float padding = 50; // Increased padding between groups
+            float maxWidth = 2000; // Increased max width to allow more groups per row
+            int i = 0;
+
+            foreach (var kvp in sortedGroups) // For each group execute layout group
             {
-                // Move to the next row
-                x = 0;
-                y += maxHeightInRow + padding;
-                maxHeightInRow = 0;
-            }
+                ++i;
+                var group = kvp.Value;
+                LayoutNodesInGroup(group, i); // Layout nodes before calculating group size
+                group.UpdateGeometryFromContent();
 
-            // Set the position of the group
-            group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
-
-            // Update x and maxHeightInRow for the next group
-            x += group.contentRect.width + padding;
-            maxHeightInRow = Mathf.Max(maxHeightInRow, group.contentRect.height);
-        }
-    }
-
-    private void LayoutNodesInGroup(Group group)
-    {
-        float x = 10;
-        float y = 40; // Increased initial y to leave more space for group title
-        float maxHeightInRow = 0;
-        float padding = 20; // Increased padding between nodes
-        float maxWidth = 300; // Fixed width for all groups
-
-        foreach (var element in group.containedElements)
-        {
-            if (element is Node node)
-            {
-                // Ensure consistent node size
-                node.style.width = 150;
-                node.style.height = 100;
-
-                if (x + node.contentRect.width > maxWidth - 20) // -20 to leave some margin
+                // Check if the group exceeds the row width
+                if (x + group.contentRect.width > maxWidth)
                 {
-                    x = 10;
+                    // Move to the next row
+                    x = 0;
                     y += maxHeightInRow + padding;
                     maxHeightInRow = 0;
                 }
 
-                node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
+                // Set the position of the group
+                group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
 
-                x += node.contentRect.width + padding;
-                maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
+                // Update x and maxHeightInRow for the next group
+                x += group.contentRect.width + padding;
+                maxHeightInRow = Mathf.Max(maxHeightInRow, group.contentRect.height);
             }
         }
 
-        // Update group size to fit all nodes
-        float groupWidth = Mathf.Max(maxWidth, x + 10); // Ensure minimum width
-        float groupHeight = y + maxHeightInRow + padding;
-        group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, groupWidth, groupHeight));
-    }
+        private void LayoutNodesInGroup(Group group, int groupNumber)
+        {
+            float x = 10 + groupNumber % 5 * 500;
+            float y = 40 + groupNumber * 250; // Increased initial y to leave more space for group title
+            float maxHeightInRow = 0;
+            float padding = 20; // Increased padding between nodes
+            float maxWidth = 300; // Fixed width for all groups
+
+            foreach (var element in group.containedElements) // Iterating over nodes in group
+            {
+                if (element is Node node)
+                {
+                    node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
+
+                    x += node.contentRect.width + padding;
+                    maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
+                }
+            }
+
+            // Update group size to fit all nodes
+            float groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber-1) % 5 * 500); // Ensure minimum width
+            float groupHeight = y + maxHeightInRow + padding;
+            group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, groupWidth, groupHeight));
+        }
 
         private void AddMiniMap()
         {
