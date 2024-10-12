@@ -105,7 +105,7 @@ namespace SceneConnections.EditorWindow
             {
                 GUILayout.Space(10);
                 EditorGUILayout.LabelField("Selected: " + _selectedNode.GetType().Name, EditorStyles.boldLabel);
-                Editor editor = Editor.CreateEditor(_selectedNode);
+                Editor editor = Editor.CreateEditor(_selectedNode); // TODO: add this to GraphViewImplementation
                 editor.OnInspectorGUI();
                 DestroyImmediate(editor);
             }
@@ -318,9 +318,9 @@ namespace SceneConnections.EditorWindow
             
             // Set color based on component type and active state
             if (info.IsBuiltIn)
-                GUI.color = info.IsActive ? new Color(0.8f, 0.9f, 1f) : new Color(0.6f, 0.7f, 0.8f);
+                GUI.color = info.IsActive ? new Color(0.1f, 0.9f, 1f) : new Color(0.9f, 0.2f, 0.1f);
             else
-                GUI.color = info.IsActive ? Color.white : new Color(0.7f, 0.7f, 0.7f);
+                GUI.color = info.IsActive ? Color.white : new Color(0.7f, 0.1f, 0.7f);
             
             GUI.Box(scaledRect, "");
             GUI.color = Color.white;
@@ -342,6 +342,8 @@ namespace SceneConnections.EditorWindow
                 if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
                 {
                     _selectedNode = component;
+                    
+                    // might be causing some lag
                     Repaint();
                 }
             }
@@ -361,7 +363,7 @@ namespace SceneConnections.EditorWindow
                 
                 if (rowWidth + nodeSize.x + 20 > position.width * 0.8f) // Limit row width to 80% of window width
                 {
-                    // Start a new row
+                    // New row
                     maxRowWidth = Mathf.Max(maxRowWidth, rowWidth);
                     height += rowHeight + 20;
                     rowWidth = nodeSize.x + 20;
@@ -374,7 +376,7 @@ namespace SceneConnections.EditorWindow
                 }
             }
 
-            // Add the last row
+            // Last row
             maxRowWidth = Mathf.Max(maxRowWidth, rowWidth);
             height += rowHeight;
 
@@ -397,7 +399,7 @@ namespace SceneConnections.EditorWindow
         }
 
         // Check if the component is a built-in Unity component without a namespace
-        string[] builtInComponents = new string[]
+        string[] builtInComponents =
         {
             "Transform", "RectTransform", "Rigidbody", "Rigidbody2D", "Collider", "Collider2D",
             "MeshRenderer", "SkinnedMeshRenderer", "Camera", "Light", "AudioSource", "AudioListener",
