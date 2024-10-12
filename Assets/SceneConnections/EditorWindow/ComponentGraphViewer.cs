@@ -14,11 +14,11 @@ namespace SceneConnections.EditorWindow
         private ComponentGraphView _graphView;
         private bool _isRefreshing;
 
-        [MenuItem("Window/Instance-based Component Graph Viewer")]
+        [MenuItem("Window/Enhanced Instance-based Component Graph Viewer")]
         public static void OpenWindow()
         {
             ComponentGraphViewer window = GetWindow<ComponentGraphViewer>();
-            window.titleContent = new GUIContent("Instance-based Component Graph");
+            window.titleContent = new GUIContent("Enhanced Component Graph");
             window.minSize = new Vector2(800, 600);
         }
 
@@ -126,6 +126,9 @@ namespace SceneConnections.EditorWindow
             var outputPort = GeneratePort(node, Direction.Output, Port.Capacity.Multi);
             node.outputContainer.Add(outputPort);
 
+            // Add component properties to the node
+            AddComponentProperties(node, component);
+
             node.RegisterCallback<MouseDownEvent>(evt =>
             {
                 if (evt.clickCount == 2)
@@ -142,6 +145,29 @@ namespace SceneConnections.EditorWindow
             if (_gameObjectGroups.TryGetValue(component.gameObject, out var group))
             {
                 group.AddElement(node);
+            }
+        }
+
+        private void AddComponentProperties(Node node, Component component)
+        {
+            var properties = component.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(p => p.CanRead && !p.GetIndexParameters().Any());
+
+            foreach (var property in properties.Take(5)) // Limit to 5 properties to avoid cluttering
+            {
+                try
+                {
+                    var value = property.GetValue(component);
+                    if (value != null)
+                    {
+                        var propertyLabel = new Label($"{property.Name}: {value}");
+                        node.mainContainer.Add(propertyLabel);
+                    }
+                }
+                catch
+                {
+                    // Ignore properties that throw exceptions when accessed
+                }
             }
         }
 
@@ -183,29 +209,76 @@ namespace SceneConnections.EditorWindow
         {
             return node.InstantiatePort(Orientation.Horizontal, direction, capacity, typeof(Component));
         }
+        
+        
 
         private void LayoutNodes()
         {
-            foreach (var group in _gameObjectGroups.Values)
-            {
-                group.UpdateGeometryFromContent();
-            }
+            // Sort groups by hierarchy depth to layout parent objects before children
+            var sortedGroups = _gameObjectGroups.OrderBy(kvp => kvp.Key.transform.GetHierarchyDepth());
 
-            // You may want to implement a more sophisticated layout algorithm here
-            // For now, we'll just spread out the groups
             float x = 0;
             float y = 0;
-            float padding = 50;
-            foreach (var group in _gameObjectGroups.Values)
+            float maxHeightInRow = 0;
+            float padding = 20;
+            float maxWidth = 1000; // Adjust based on your needs
+
+            foreach (var kvp in sortedGroups)
             {
-                group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
-                x += group.contentRect.width + padding;
-                if (x > 1000) // Arbitrary width to wrap
+                var group = kvp.Value;
+                group.UpdateGeometryFromContent();
+
+                // Check if the group exceeds the row width
+                if (x + group.contentRect.width > maxWidth)
                 {
+                    // Move to the next row
                     x = 0;
-                    y += 300; // Arbitrary height for next row
+                    y += maxHeightInRow + padding;
+                    maxHeightInRow = 0;
+                }
+
+                // Set the position of the group
+                group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
+
+                // Update x and maxHeightInRow for the next group
+                x += group.contentRect.width + padding;
+                maxHeightInRow = Mathf.Max(maxHeightInRow, group.contentRect.height);
+
+                // Layout nodes within the group
+                LayoutNodesInGroup(group);
+            }
+        }
+
+
+        private void LayoutNodesInGroup(Group group)
+        {
+            float x = 10;
+            float y = 30; // Start below the group title
+            float maxHeightInRow = 0;
+            float padding = 10;
+            float maxWidth = group.contentRect.width - 20; // Leave some margin
+
+            foreach (var element in group.containedElements)
+            {
+                if (element is Node node)
+                {
+                    if (x + node.contentRect.width > maxWidth)
+                    {
+                        x = 10;
+                        y += maxHeightInRow + padding;
+                        maxHeightInRow = 0;
+                    }
+
+                    node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
+
+                    x += node.contentRect.width + padding;
+                    maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
                 }
             }
+
+            // Update group size to fit all nodes
+            group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, 
+                group.contentRect.width, y + maxHeightInRow + padding));
         }
 
         private void AddMiniMap()
