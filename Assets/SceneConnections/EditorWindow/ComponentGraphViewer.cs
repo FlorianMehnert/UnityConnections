@@ -54,7 +54,7 @@ namespace SceneConnections.EditorWindow
 
         public ComponentGraphView(ComponentGraphViewer window)
         {
-            SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+            SetupZoom(0.1f, 2.0f);
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
@@ -183,6 +183,16 @@ namespace SceneConnections.EditorWindow
             var outputPort = GeneratePort(node, Direction.Output, Port.Capacity.Multi);
             node.outputContainer.Add(outputPort);
 
+            // Change to double-click event to open the ComponentInstanceEditor
+            node.RegisterCallback<MouseDownEvent>(evt =>
+            {
+                if (evt.clickCount == 2)
+                {
+                    ComponentInstanceEditor.OpenWindow(componentType);
+                    evt.StopPropagation();
+                }
+            });
+
             return node;
         }
 
@@ -223,5 +233,7 @@ namespace SceneConnections.EditorWindow
             minimap.SetPosition(new Rect(15,50, 200, 100));
             Add(minimap);
         }
+        
+        //private void Add
     }
 }
