@@ -171,7 +171,8 @@ namespace SceneConnections.EditorWindow
         {
             foreach (var (sourceComponent, sourceNode) in _componentNodes)
             {
-                var fields = sourceComponent.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                var fields = sourceComponent.GetType()
+                    .GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
                 foreach (var field in fields)
                 {
                     if (!typeof(Component).IsAssignableFrom(field.FieldType)) continue;
@@ -240,27 +241,26 @@ namespace SceneConnections.EditorWindow
 
         private static void LayoutNodesInGroup(Group group, int groupNumber)
         {
-            float x = 0;
+            const float x = 0;
             float y = groupNumber * 250; // Increased initial y to leave more space for group title
             float maxHeightInRow = 0;
             const float padding = 20; // Increased padding between nodes
             const float maxWidth = 300; // Fixed width for all groups
 
-            var j = 0;
+            var currentWidth = 0.0f;
             foreach (var element in group.containedElements) // Iterating over nodes in group
             {
                 if (element is not Node node) continue;
-                Debug.Log(x);
-                Debug.Log(x + j * 250);
-                node.SetPosition(new Rect(x + j * 250, y, node.contentRect.width, node.contentRect.height));
-                
+                Debug.Log(node.contentRect.width); // this is only available on the next frame??? -> either calulate content rects before or something \_O_/
+                node.SetPosition(new Rect(currentWidth, y, 0, 0));
+
                 //x += node.contentRect.width + padding;
                 maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
-                ++j;
+                currentWidth += 300.0f + x;
             }
 
             // Update group size to fit all nodes
-            var groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber-1) % 5 * 500); // Ensure minimum width
+            var groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber - 1) % 5 * 500); // Ensure minimum width
             var groupHeight = y + maxHeightInRow + padding;
             group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, groupWidth, groupHeight));
         }
