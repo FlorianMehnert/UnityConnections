@@ -196,7 +196,7 @@ namespace SceneConnections.EditorWindow
             AddElement(edge);
         }
 
-        private Port GeneratePort(Node node, Direction direction, Port.Capacity capacity)
+        private static Port GeneratePort(Node node, Direction direction, Port.Capacity capacity)
         {
             return node.InstantiatePort(Orientation.Horizontal, direction, capacity, typeof(Component));
         }
@@ -243,27 +243,31 @@ namespace SceneConnections.EditorWindow
             float x = 0;
             float y = groupNumber * 250; // Increased initial y to leave more space for group title
             float maxHeightInRow = 0;
-            float padding = 20; // Increased padding between nodes
-            float maxWidth = 300; // Fixed width for all groups
+            const float padding = 20; // Increased padding between nodes
+            const float maxWidth = 300; // Fixed width for all groups
 
+            var j = 0;
             foreach (var element in group.containedElements) // Iterating over nodes in group
             {
                 if (element is not Node node) continue;
-                node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
-
-                x += node.contentRect.width + padding;
+                Debug.Log(x);
+                Debug.Log(x + j * 250);
+                node.SetPosition(new Rect(x + j * 250, y, node.contentRect.width, node.contentRect.height));
+                
+                //x += node.contentRect.width + padding;
                 maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
+                ++j;
             }
 
             // Update group size to fit all nodes
-            float groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber-1) % 5 * 500); // Ensure minimum width
-            float groupHeight = y + maxHeightInRow + padding;
+            var groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber-1) % 5 * 500); // Ensure minimum width
+            var groupHeight = y + maxHeightInRow + padding;
             group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, groupWidth, groupHeight));
         }
 
         private void AddMiniMap()
         {
-            var minimap = new MiniMap()
+            var minimap = new MiniMap
             {
                 anchored = true
             };
