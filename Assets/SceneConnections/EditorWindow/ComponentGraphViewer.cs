@@ -17,14 +17,14 @@ namespace SceneConnections.EditorWindow
         [MenuItem("Window/Enhanced Instance-based Component Graph Viewer")]
         public static void OpenWindow()
         {
-            ComponentGraphViewer window = GetWindow<ComponentGraphViewer>();
+            var window = GetWindow<ComponentGraphViewer>();
             window.titleContent = new GUIContent("Enhanced Component Graph");
             window.minSize = new Vector2(800, 600);
         }
 
         private void OnEnable()
         {
-            _graphView = new ComponentGraphView(this);
+            _graphView = new ComponentGraphView();
             rootVisualElement.Add(_graphView);
 
             var refreshButton = new Button(() =>
@@ -53,7 +53,7 @@ namespace SceneConnections.EditorWindow
         private readonly Dictionary<Component, Node> _componentNodes = new();
         private readonly Dictionary<GameObject, Group> _gameObjectGroups = new();
 
-        public ComponentGraphView(ComponentGraphViewer window)
+        public ComponentGraphView()
         {
             SetupZoom(.01f, 5.0f);
             this.AddManipulator(new ContentDragger());
@@ -84,7 +84,7 @@ namespace SceneConnections.EditorWindow
 
         private void CreateComponentGraph()
         {
-            var allGameObjects = GameObject.FindObjectsOfType<GameObject>();
+            var allGameObjects = Object.FindObjectsOfType<GameObject>();
 
             foreach (var gameObject in allGameObjects)
             {
@@ -131,12 +131,10 @@ namespace SceneConnections.EditorWindow
 
             node.RegisterCallback<MouseDownEvent>(evt =>
             {
-                if (evt.clickCount == 2)
-                {
-                    Selection.activeObject = component;
-                    EditorGUIUtility.PingObject(component);
-                    evt.StopPropagation();
-                }
+                if (evt.clickCount != 2) return;
+                Selection.activeObject = component;
+                EditorGUIUtility.PingObject(component);
+                evt.StopPropagation();
             });
 
             AddElement(node);
@@ -148,7 +146,7 @@ namespace SceneConnections.EditorWindow
             }
         }
 
-        private void AddComponentProperties(Node node, Component component)
+        private static void AddComponentProperties(Node node, Component component)
         {
             var properties = component.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(p => p.CanRead && !p.GetIndexParameters().Any());
@@ -158,11 +156,9 @@ namespace SceneConnections.EditorWindow
                 try
                 {
                     var value = property.GetValue(component);
-                    if (value != null)
-                    {
-                        var propertyLabel = new Label($"{property.Name}: {value}");
-                        node.mainContainer.Add(propertyLabel);
-                    }
+                    if (value == null) continue;
+                    var propertyLabel = new Label($"{property.Name}: {value}");
+                    node.mainContainer.Add(propertyLabel);
                 }
                 catch
                 {
@@ -173,21 +169,16 @@ namespace SceneConnections.EditorWindow
 
         private void CreateEdges()
         {
-            foreach (var kvp in _componentNodes)
+            foreach (var (sourceComponent, sourceNode) in _componentNodes)
             {
-                var sourceComponent = kvp.Key;
-                var sourceNode = kvp.Value;
-
                 var fields = sourceComponent.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
                 foreach (var field in fields)
                 {
-                    if (typeof(Component).IsAssignableFrom(field.FieldType))
+                    if (!typeof(Component).IsAssignableFrom(field.FieldType)) continue;
+                    var targetComponent = field.GetValue(sourceComponent) as Component;
+                    if (targetComponent != null && _componentNodes.TryGetValue(targetComponent, out var targetNode))
                     {
-                        var targetComponent = field.GetValue(sourceComponent) as Component;
-                        if (targetComponent != null && _componentNodes.TryGetValue(targetComponent, out var targetNode))
-                        {
-                            CreateEdge(sourceNode, targetNode);
-                        }
+                        CreateEdge(sourceNode, targetNode);
                     }
                 }
             }
@@ -195,13 +186,13 @@ namespace SceneConnections.EditorWindow
 
         private void CreateEdge(Node sourceNode, Node targetNode)
         {
-            Edge edge = new Edge
+            var edge = new Edge
             {
                 output = sourceNode.outputContainer[0] as Port,
                 input = targetNode.inputContainer[0] as Port
             };
-            edge.input.Connect(edge);
-            edge.output.Connect(edge);
+            edge.input?.Connect(edge);
+            edge.output?.Connect(edge);
             AddElement(edge);
         }
 
@@ -218,9 +209,9 @@ namespace SceneConnections.EditorWindow
             float x = 0;
             float y = 0;
             float maxHeightInRow = 0;
-            float padding = 50; // Increased padding between groups
-            float maxWidth = 2000; // Increased max width to allow more groups per row
-            int i = 0;
+            const float padding = 50; // Increased padding between groups
+            const float maxWidth = 2000; // Increased max width to allow more groups per row
+            var i = 0;
 
             foreach (var kvp in sortedGroups) // For each group execute layout group
             {
@@ -247,23 +238,21 @@ namespace SceneConnections.EditorWindow
             }
         }
 
-        private void LayoutNodesInGroup(Group group, int groupNumber)
+        private static void LayoutNodesInGroup(Group group, int groupNumber)
         {
-            float x = 10 + groupNumber % 5 * 500;
-            float y = 40 + groupNumber * 250; // Increased initial y to leave more space for group title
+            float x = 0;
+            float y = groupNumber * 250; // Increased initial y to leave more space for group title
             float maxHeightInRow = 0;
             float padding = 20; // Increased padding between nodes
             float maxWidth = 300; // Fixed width for all groups
 
             foreach (var element in group.containedElements) // Iterating over nodes in group
             {
-                if (element is Node node)
-                {
-                    node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
+                if (element is not Node node) continue;
+                node.SetPosition(new Rect(x, y, node.contentRect.width, node.contentRect.height));
 
-                    x += node.contentRect.width + padding;
-                    maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
-                }
+                x += node.contentRect.width + padding;
+                maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
             }
 
             // Update group size to fit all nodes
@@ -274,7 +263,7 @@ namespace SceneConnections.EditorWindow
 
         private void AddMiniMap()
         {
-            MiniMap minimap = new MiniMap()
+            var minimap = new MiniMap()
             {
                 anchored = true
             };
