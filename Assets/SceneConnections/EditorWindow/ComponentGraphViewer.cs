@@ -29,18 +29,22 @@ namespace SceneConnections.EditorWindow
 
             var refreshButton = new Button(() =>
             {
-                if (!_isRefreshing)
+                if (_isRefreshing) return;
+                _isRefreshing = true;
+                EditorApplication.delayCall += () =>
                 {
-                    _isRefreshing = true;
+                    _graphView.RefreshGraph();
+                    // Schedule a second layout pass after everything is initialized
                     EditorApplication.delayCall += () =>
                     {
-                        _graphView.RefreshGraph();
+                        _graphView.ForceLayoutRefresh();
                         _isRefreshing = false;
                     };
-                }
+                };
             }) { text = "Refresh Graph" };
             rootVisualElement.Add(refreshButton);
         }
+
 
         private void OnDisable()
         {
@@ -52,6 +56,9 @@ namespace SceneConnections.EditorWindow
     {
         private readonly Dictionary<Component, Node> _componentNodes = new();
         private readonly Dictionary<GameObject, Group> _gameObjectGroups = new();
+        private bool _needsLayout;
+        private readonly Label _loadingLabel;
+
 
         public ComponentGraphView()
         {
@@ -64,15 +71,40 @@ namespace SceneConnections.EditorWindow
             var gridBackground = new GridBackground();
             Insert(0, gridBackground);
             gridBackground.StretchToParentSize();
-
             style.flexGrow = 1;
             style.flexShrink = 1;
+            // Add to existing constructor
+            _loadingLabel = new Label("Calculating layout...")
+            {
+                style =
+                {
+                    display = DisplayStyle.None,
+                    position = Position.Absolute,
+                    top = 10,
+                    left = 10,
+                    backgroundColor = new Color(.5f, 0, 0, 0.8f),
+                    color = Color.white
+                }
+            };
+            Add(_loadingLabel);
         }
 
         public void RefreshGraph()
         {
             ClearGraph();
             CreateComponentGraph();
+            _loadingLabel.style.display = DisplayStyle.Flex;
+            _needsLayout = true;
+            EditorApplication.delayCall += PerformLayout;
+        }
+
+        private void PerformLayout()
+        {
+            if (!_needsLayout) return;
+
+            LayoutNodes();
+            _loadingLabel.style.display = DisplayStyle.None;
+            _needsLayout = false;
         }
 
         private void ClearGraph()
@@ -205,72 +237,118 @@ namespace SceneConnections.EditorWindow
 
         private void LayoutNodes()
         {
-            var sortedGroups = _gameObjectGroups; //.OrderBy(kvp => kvp.Key.transform.GetHierarchyDepth());
-
             float x = 0;
             float y = 0;
             float maxHeightInRow = 0;
-            const float padding = 50; // Increased padding between groups
-            const float maxWidth = 2000; // Increased max width to allow more groups per row
-            var i = 0;
+            const float groupPadding = 50;
+            const float maxWidth = 2000;
 
-            foreach (var kvp in sortedGroups) // For each group execute layout group
+            foreach (var kvp in _gameObjectGroups)
             {
-                ++i;
                 var group = kvp.Value;
-                LayoutNodesInGroup(group, i); // Layout nodes before calculating group size
+                LayoutNodesInGroup(group);
                 group.UpdateGeometryFromContent();
 
                 // Check if the group exceeds the row width
                 if (x + group.contentRect.width > maxWidth)
                 {
-                    // Move to the next row
                     x = 0;
-                    y += maxHeightInRow + padding;
+                    y += maxHeightInRow + groupPadding;
                     maxHeightInRow = 0;
                 }
 
-                // Set the position of the group
                 group.SetPosition(new Rect(x, y, group.contentRect.width, group.contentRect.height));
 
-                // Update x and maxHeightInRow for the next group
-                x += group.contentRect.width + padding;
+                x += group.contentRect.width + groupPadding;
                 maxHeightInRow = Mathf.Max(maxHeightInRow, group.contentRect.height);
             }
         }
 
-        private static void LayoutNodesInGroup(Group group, int groupNumber)
+        private static void LayoutNodesInGroup(Group group)
         {
-            const float x = 0;
-            float y = groupNumber * 250; // Increased initial y to leave more space for group title
+            const float nodePadding = 20;
+            const float maxGroupWidth = 800;
+            var currentX = nodePadding;
+            float currentY = 50; // Space for group title
+
+            var nodes = group.containedElements.OfType<Node>().ToList();
             float maxHeightInRow = 0;
-            const float padding = 20; // Increased padding between nodes
-            const float maxWidth = 300; // Fixed width for all groups
+            float rowWidth = 0;
 
-            var currentWidth = 0.0f;
-            foreach (var element in group.containedElements) // Iterating over nodes in group
+            // Debug log the number of nodes
+            Debug.Log($"Laying out {nodes.Count} nodes in group {group.title}");
+
+            foreach (var node in nodes)
             {
-                if (element is not Node node) continue;
-                Debug.Log(node.contentRect.width); // this is only available on the next frame??? -> either calulate content rects before or something \_O_/
-                node.SetPosition(new Rect(currentWidth, y, 0, 0));
+                // Debug log each node's dimensions
+                Debug.Log($"Node {node.title} - Width: {node.contentRect.width}, Height: {node.contentRect.height}");
 
-                //x += node.contentRect.width + padding;
-                maxHeightInRow = Mathf.Max(maxHeightInRow, node.contentRect.height);
-                currentWidth += 300.0f + x;
+                // Use a minimum width if contentRect is not yet calculated
+                var nodeWidth = Mathf.Max(node.contentRect.width, 200f);
+                var nodeHeight = Mathf.Max(node.contentRect.height, 100f);
+
+                // Check if we need to move to the next row
+                if (currentX + nodeWidth > maxGroupWidth)
+                {
+                    // Debug log row wrap
+                    Debug.Log($"Moving to next row at y: {currentY}");
+
+                    currentX = nodePadding;
+                    currentY += maxHeightInRow + nodePadding;
+                    maxHeightInRow = 0;
+                }
+
+                // Debug log node position
+                Debug.Log($"Positioning node {node.title} at X: {currentX}, Y: {currentY}");
+
+                // Set the position
+                var newRect = new Rect(currentX, currentY, nodeWidth, nodeHeight);
+                node.SetPosition(newRect);
+
+                // Update tracking variables
+                currentX += nodeWidth + nodePadding;
+                maxHeightInRow = Mathf.Max(maxHeightInRow, nodeHeight);
+                rowWidth = Mathf.Max(rowWidth, currentX);
             }
 
-            // Update group size to fit all nodes
-            var groupWidth = Mathf.Max(maxWidth, 10 + (groupNumber - 1) % 5 * 500); // Ensure minimum width
-            var groupHeight = y + maxHeightInRow + padding;
-            group.SetPosition(new Rect(group.contentRect.x, group.contentRect.y, groupWidth, groupHeight));
+            // Update group size
+            var finalHeight = currentY + maxHeightInRow + nodePadding;
+            var finalWidth = Mathf.Min(maxGroupWidth, rowWidth + nodePadding);
+
+            // Debug log final group dimensions
+            Debug.Log($"Setting group {group.title} dimensions - Width: {finalWidth}, Height: {finalHeight}");
+
+            group.SetPosition(new Rect(
+                group.contentRect.x,
+                group.contentRect.y,
+                finalWidth,
+                finalHeight
+            ));
         }
+
+// Add this helper method to force a layout refresh
+        public void ForceLayoutRefresh()
+        {
+            foreach (var node in _gameObjectGroups.Values.SelectMany(group => group.containedElements.OfType<Node>()))
+            {
+                // Force the node to calculate its layout
+                node.RefreshExpandedState();
+                node.RefreshPorts();
+            }
+
+            // Schedule the layout for the next frame
+            EditorApplication.delayCall += () =>
+            {
+                LayoutNodes();
+                // Force the graph view to update
+                UpdateViewTransform(viewTransform.position, viewTransform.scale);
+            };
+        }
+
 
         private void AddMiniMap()
         {
-            var minimap = new MiniMap
-            {
-                anchored = true
-            };
+            var minimap = new NavigableMinimap(this);
             minimap.SetPosition(new Rect(15, 50, 200, 100));
             Add(minimap);
         }
