@@ -14,7 +14,7 @@ namespace SceneConnections.EditorWindow
         private ComponentGraphView _graphView;
         private bool _isRefreshing;
 
-        [MenuItem("Window/Enhanced Instance-based Component Graph Viewer")]
+        [MenuItem("Window/Connections v2 %#2")]
         public static void OpenWindow()
         {
             var window = GetWindow<ComponentGraphViewer>();
