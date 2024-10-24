@@ -205,7 +205,7 @@ namespace SceneConnections.EditorWindow
         }
 
 
-        [MenuItem("Window/Rectangle Graph Overview")]
+        [MenuItem("Window/Connections v1 %#1^")]
         public static void ShowWindow()
         {
             GetWindow<RectangleWindow>("Rectangle Graph");
