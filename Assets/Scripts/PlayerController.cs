@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,20 +10,20 @@ public class PlayerController : MonoBehaviour
     public KeyCode jump;
     public KeyCode throwBall;
 
-    private Rigidbody2D theRB;
-
     public Transform groundCheckPoint;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
 
     public bool isGrounded;
 
-    private Animator anim;
-
     public GameObject snowBall;
 
     public Transform throwPoint;
-    
+
+    private Animator anim;
+
+    private Rigidbody2D theRB;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,34 +38,40 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, whatIsGround);
         if (Input.GetKey(left))
         {
-            theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
-        }else if (Input.GetKey(right)){
-            theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
-        }else {
-            theRB.velocity = new Vector2(0,theRB.velocity.y);
+            theRB.linearVelocity = new Vector2(-moveSpeed, theRB.linearVelocity.y);
+        }
+        else if (Input.GetKey(right))
+        {
+            theRB.linearVelocity = new Vector2(moveSpeed, theRB.linearVelocity.y);
+        }
+        else
+        {
+            theRB.linearVelocity = new Vector2(0, theRB.linearVelocity.y);
         }
 
         if (Input.GetKeyDown(jump) && isGrounded)
         {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            theRB.linearVelocity = new Vector2(theRB.linearVelocity.x, jumpForce);
         }
 
-        if (Input.GetKeyDown(throwBall)){
-            GameObject ballClone = (GameObject) Instantiate(snowBall, throwPoint.position, throwPoint.rotation);
+        if (Input.GetKeyDown(throwBall))
+        {
+            GameObject ballClone = (GameObject)Instantiate(snowBall, throwPoint.position, throwPoint.rotation);
             ballClone.transform.localScale = transform.localScale;
             anim.SetTrigger("throw");
         }
 
-        if(theRB.velocity.x < 0)
+        if (theRB.linearVelocity.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-        } else if (theRB.velocity.x > 0){
+        }
+        else if (theRB.linearVelocity.x > 0)
+        {
             transform.localScale = new Vector3(1, 1, 1);
         }
 
-        anim.SetFloat("speed", Mathf.Abs(theRB.velocity.x));
+        anim.SetFloat("speed", Mathf.Abs(theRB.linearVelocity.x));
         anim.SetBool("grounded", isGrounded);
         //anim.SetBool("throw", theRB.velocity.x);
     }
 }
-
