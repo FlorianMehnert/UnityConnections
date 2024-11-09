@@ -1,0 +1,12 @@
+ColoredEdge{
+    --edge-color: white; !important;
+    border-color: red; !important;
+    border-width: 2px; !important;
+    background-color: rgba(0, 0, 255, 0.2); !important;
+}
+
+.edge {
+    --edge-color: rgb(255, 0, 0); /* For default state */
+    --selected-edge-color: rgb(0, 255, 0); /* For selected state */
+    --ghost-edge-color: rgb(0, 0, 255); /* For ghost state */
+}
