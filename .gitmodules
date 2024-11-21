@@ -1,3 +1,6 @@
 [submodule "Assets/SceneConnections"]
 	path = Assets/SceneConnections
 	url = git@github.com:FlorianMehnert/SceneConnections.git
+[submodule "Assets/3DConnections"]
+	path = Assets/3DConnections
+	url = git@github.com:FlorianMehnert/3DConnections.git
