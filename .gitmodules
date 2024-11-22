@@ -4,3 +4,6 @@
 [submodule "Packages/com.florian-mehnert.scene-connections"]
 	path = Packages/com.florian-mehnert.scene-connections
 	url = https://github.com/FlorianMehnert/SceneConnections.git
+[submodule "Packages/com.florian-mehnert.3d-connections"]
+	path = Packages/com.florian-mehnert.3d-connections
+	url = https://github.com/FlorianMehnert/3DConnections.git
