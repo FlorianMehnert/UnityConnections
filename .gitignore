@@ -2,5 +2,4 @@
 /.vscode/
 /.idea/
 /my-own-platformer.sln
-*.meta
 *.csv
