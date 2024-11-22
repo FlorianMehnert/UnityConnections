@@ -3,3 +3,26 @@
 /.idea/
 /my-own-platformer.sln
 *.csv
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+Assets/DefaultVolumeProfile.*
+Assets/GraphCreationSettings.*
+Assets/Images/scripts.png*
+Assets/Images/scripts_viewR.png*
+Assets/Images/scripts_zoom.png*
+Assets/Styles/ColoredEdge.uss*
+Assets/TextMesh Pro*
+Assets/Unity.VisualScripting.Generated*
+Assets/UnityGraph.dot*
+Assets/UniversalRenderPipelineGlobalSettings.asset*
+Logs/
+ProjectSettings/MultiplayerManager*
+ProjectSettings/ShaderGraphSettings*
+ProjectSettings/TimelineSettings*
+ProjectSettings/URPProjectSettings*
+ProjectSettings/VisualScriptingSettings*
+Temp/
+UserSettings/
+my-own-platformer.sln.DotSettings.user
+obj/
+videos
