@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "com.florian-mehnert.3d-connections": {
+      "version": "file:com.florian-mehnert.3d-connections",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.florian-mehnert.scene-connections": {
+      "version": "file:com.florian-mehnert.scene-connections",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.3",
       "depth": 1,
