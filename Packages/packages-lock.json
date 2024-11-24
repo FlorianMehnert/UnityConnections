@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.florian-mehnert.3d-connections": {
-      "version": "https://github.com/FlorianMehnert/3DConnections.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "947ea703177e4b127e010e502d9b33e41e9391dd"
-    },
     "com.florian-mehnert.scene-connections": {
       "version": "https://github.com/FlorianMehnert/SceneConnections.git",
       "depth": 0,
