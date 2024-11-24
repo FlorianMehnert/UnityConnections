@@ -1,6 +1,3 @@
-[submodule "Assets/3DConnections"]
-	path = Packages/com.florian-mehnert.3d-connections
-	url = git@github.com:FlorianMehnert/3DConnections.git
 [submodule "Packages/com.florian-mehnert.scene-connections"]
 	path = Packages/com.florian-mehnert.scene-connections
 	url = https://github.com/FlorianMehnert/SceneConnections.git

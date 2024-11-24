@@ -1,16 +1,18 @@
 {
   "dependencies": {
     "com.florian-mehnert.3d-connections": {
-      "version": "file:com.florian-mehnert.3d-connections",
+      "version": "https://github.com/FlorianMehnert/3DConnections.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "947ea703177e4b127e010e502d9b33e41e9391dd"
     },
     "com.florian-mehnert.scene-connections": {
-      "version": "file:com.florian-mehnert.scene-connections",
+      "version": "https://github.com/FlorianMehnert/SceneConnections.git",
       "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "c62ee9a089046d80dd334f972578a5b000edf42e"
     },
     "com.unity.2d.animation": {
       "version": "10.1.3",
