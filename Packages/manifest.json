@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.florian-mehnert.3d-connections": "https://github.com/FlorianMehnert/3DConnections.git",
     "com.florian-mehnert.scene-connections": "https://github.com/FlorianMehnert/SceneConnections.git",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.2d": "2.0.1",
