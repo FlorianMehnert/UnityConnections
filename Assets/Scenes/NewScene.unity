@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1724089455}
   - component: {fileID: 1724089454}
+  - component: {fileID: 1724089456}
   m_Layer: 0
   m_Name: OverlayCamera
   m_TagString: Untagged
@@ -202,6 +203,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724089456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724089452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fab9a8623a34c4bae11e113947395ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSpeed: 5
+  minOrthographicSize: 2
+  maxOrthographicSize: 20
+  panSpeed: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
