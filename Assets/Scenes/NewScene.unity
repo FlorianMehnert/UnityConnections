@@ -176,7 +176,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 65
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
   zoomSpeed: 5
   minOrthographicSize: 2
   maxOrthographicSize: 20
-  panSpeed: 0.5
+  basePanSpeed: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
