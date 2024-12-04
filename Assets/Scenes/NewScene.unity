@@ -119,6 +119,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &764408538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764408540}
+  - component: {fileID: 764408539}
+  m_Layer: 0
+  m_Name: NodeRendererShader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &764408539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764408538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e8f5efd3294d72a5ce702d7ebe68a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeComputeShader: {fileID: 7200000, guid: fb61fecb4d1236863820601290306bf9, type: 3}
+  nodeRenderShader: {fileID: 4800000, guid: fd9de770f4d1612d89577c1c0c16d2b8, type: 3}
+  nodeMaterial: {fileID: 2100000, guid: b4671f2d12fd784fcb517be5bbfdf620, type: 2}
+  nodeCount: 100000
+  spawnRadius: 5
+  spawnTime: 5
+  autoStart: 1
+--- !u!4 &764408540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764408538}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9663042, y: -0.94741213, z: 6.7811546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1343607513
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,10 +355,10 @@ MonoBehaviour:
   zoomSpeed: 5
   minOrthographicSize: 2
   maxOrthographicSize: 20
-  basePanSpeed: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1724089455}
   - {fileID: 1343607516}
+  - {fileID: 764408540}
