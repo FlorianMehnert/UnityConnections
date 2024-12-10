@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "c62ee9a089046d80dd334f972578a5b000edf42e"
     },
+    "com.github-glitchenzo.nugetforunity": {
+      "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0d0e4af9c79d63224ae26f1a3e822300b1475da7"
+    },
     "com.unity.2d.animation": {
       "version": "10.1.3",
       "depth": 1,
