@@ -327,10 +327,10 @@ MonoBehaviour:
   outlineScale: 1.1
   targetLayerName: OverlayScene
   currentlyDraggedCube: {fileID: 0}
-  contextMenuPrefab: {fileID: 1286671522656961090, guid: a2da0219f4d7de1d29c825852f6d3ed3, type: 3}
+  contextMenuPrefab: {fileID: 1286671522656961090, guid: c5403d3cbf929a73ab01b70bfcd5c3a8, type: 3}
   parentCanvas: {fileID: 148513507}
-  highlightPrefab: {fileID: 3140014340197302825, guid: 66e2db0b207e40f66852fceff6503ae6, type: 3}
-  highlightMaterial: {fileID: 2100000, guid: 3c8d43730d5104f7bace428fdb60ade8, type: 2}
+  highlightPrefab: {fileID: 3140014340197302825, guid: c4ccb7828916724bdb336649a11a34cf, type: 3}
+  highlightMaterial: {fileID: 2100000, guid: c97c0b6f87487e34ca122a2aeb0a9201, type: 2}
 --- !u!1 &1724089452
 GameObject:
   m_ObjectHideFlags: 0

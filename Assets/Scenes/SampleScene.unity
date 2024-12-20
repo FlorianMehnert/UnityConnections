@@ -2633,7 +2633,7 @@ MonoBehaviour:
   nodeWidth: 2
   nodeHeight: 1
   nodeColor: {r: 1, g: 1, b: 1, a: 1}
-  nodePrefab: {fileID: 5666332458060235577, guid: 9956e39a4f273831a8e5d7fd1d75a0cf, type: 3}
+  nodePrefab: {fileID: 5666332458060235577, guid: e836823126ba9d9149cc0c726ad8ce9c, type: 3}
 --- !u!1 &847153845
 GameObject:
   m_ObjectHideFlags: 0

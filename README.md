@@ -10,7 +10,7 @@ Since I am only getting started with Unity, this section has still had a lot of 
 4. open UnityConnections as a Unity project
 5. download the unity package for the standalone file browser and import into unity Assets → Import Package → Custom Package
 6. install NuGet
-7. in NuGet search for Microsoft.CodeAnalysis and Microsoft.CodeAnalysis.CSharp and install these packages (a version in this project is 4.12.0 for both. on linux, you might need to remove all implicitly installed .Workspaces packages manually if Unity complains) 
+7. in NuGet search for Microsoft.CodeAnalysis and Microsoft.CodeAnalysis.CSharp and install these packages (a version in this project is 4.12.0 for both. on linux, you might also need to install SQLitePCLRaw.bundle_green if workspaces fail to compile 
 
 
 ## Progress
