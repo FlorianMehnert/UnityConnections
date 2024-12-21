@@ -6092,6 +6092,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6630610079559458340, guid: bda612760619e5634873e2708d828ff8, type: 3}
+      propertyPath: toAnalyzeSceneScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 06e6d946569f263da9e4331731efb6c9, type: 2}
     - target: {fileID: 7139736255563844946, guid: bda612760619e5634873e2708d828ff8, type: 3}
       propertyPath: m_Name
       value: 3DConnections
