@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeWidth: 2
   nodeHeight: 1
-  nodeColor: {r: 1, g: 1, b: 1, a: 1}
+  nodeColorsScriptableObject: {fileID: 11400000, guid: 504eee6cf71fcfbb6af3b91af5220206, type: 2}
   nodePrefab: {fileID: 5666332458060235577, guid: e836823126ba9d9149cc0c726ad8ce9c, type: 3}
 --- !u!1 &847153845
 GameObject:

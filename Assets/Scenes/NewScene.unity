@@ -326,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineScale: 1.1
   targetLayerName: OverlayScene
+  nodeColorsScriptableObject: {fileID: 11400000, guid: 504eee6cf71fcfbb6af3b91af5220206, type: 2}
   currentlyDraggedCube: {fileID: 0}
   contextMenuPrefab: {fileID: 1286671522656961090, guid: c5403d3cbf929a73ab01b70bfcd5c3a8, type: 3}
   parentCanvas: {fileID: 148513507}
