@@ -6084,7 +6084,7 @@ PrefabInstance:
     - target: {fileID: 6630610079559458340, guid: bda612760619e5634873e2708d828ff8, type: 3}
       propertyPath: nodeGraphScriptableObject
       value: 
-      objectReference: {fileID: 11400000, guid: 8f45bb87962ec376492477f3a4293ce1, type: 2}
+      objectReference: {fileID: 11400000, guid: 65cb83372087c6600a62ed4f9d45d3d9, type: 2}
     - target: {fileID: 7139736255563844946, guid: bda612760619e5634873e2708d828ff8, type: 3}
       propertyPath: m_Name
       value: 3DConnections
