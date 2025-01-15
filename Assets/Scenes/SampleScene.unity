@@ -386,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64503479}
   - component: {fileID: 64503478}
+  - component: {fileID: 64503480}
   m_Layer: 0
   m_Name: SnowBallFightArt_36
   m_TagString: Untagged
@@ -463,6 +464,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64503480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64503477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 0}
 --- !u!1 &124891304
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +491,7 @@ GameObject:
   - component: {fileID: 124891307}
   - component: {fileID: 124891306}
   - component: {fileID: 124891305}
+  - component: {fileID: 124891311}
   m_Layer: 8
   m_Name: Player2
   m_TagString: Untagged
@@ -532,6 +547,7 @@ MonoBehaviour:
   isGrounded: 0
   snowBall: {fileID: 340257232822327308, guid: 122c3486ea1cca2c2ab2a4c183c2a9fd, type: 3}
   throwPoint: {fileID: 997980886}
+  reference: {fileID: 0}
 --- !u!50 &124891307
 Rigidbody2D:
   serializedVersion: 5
@@ -677,6 +693,19 @@ Transform:
   - {fileID: 997980886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124891311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124891304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 41082578}
 --- !u!1 &143290085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1471,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &472483682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8038896808286727427, guid: 2723a5eb85d11e2b5b59034313f34db7, type: 3}
+  m_PrefabInstance: {fileID: 8495346868068872004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &472483685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472483682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 124891304}
 --- !u!1 &482863268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +2026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624343495}
   - component: {fileID: 624343494}
+  - component: {fileID: 624343496}
   m_Layer: 0
   m_Name: SnowBallFightArt_42
   m_TagString: Untagged
@@ -2056,6 +2104,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624343496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624343493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 0}
 --- !u!1 &679481405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3074,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &971605588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2437902625474019105, guid: 006913249de2c30f4a23b6f992f57669, type: 3}
+  m_PrefabInstance: {fileID: 5901567824930283288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &971605591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971605588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 1107395004}
 --- !u!1 &997980885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,6 +3220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1035703223}
   - component: {fileID: 1035703222}
+  - component: {fileID: 1035703224}
   m_Layer: 0
   m_Name: SnowBallFightArt_37 (1)
   m_TagString: Untagged
@@ -3218,6 +3298,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1035703224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035703221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 0}
 --- !u!1 &1107395004
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,6 +3325,7 @@ GameObject:
   - component: {fileID: 1107395007}
   - component: {fileID: 1107395009}
   - component: {fileID: 1107395010}
+  - component: {fileID: 1107395011}
   m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
@@ -3410,6 +3504,7 @@ MonoBehaviour:
   isGrounded: 0
   snowBall: {fileID: 340257232822327308, guid: 122c3486ea1cca2c2ab2a4c183c2a9fd, type: 3}
   throwPoint: {fileID: 150683860}
+  reference: {fileID: 0}
 --- !u!95 &1107395010
 Animator:
   serializedVersion: 7
@@ -3432,6 +3527,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1107395011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107395004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 124891304}
 --- !u!1 &1151672166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,6 +3811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274467758}
   - component: {fileID: 1274467757}
+  - component: {fileID: 1274467759}
   m_Layer: 0
   m_Name: SnowBallFightArt_41
   m_TagString: Untagged
@@ -3780,6 +3889,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274467759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274467756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 0}
 --- !u!1 &1441642238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5782,6 +5904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136227619}
   - component: {fileID: 2136227618}
+  - component: {fileID: 2136227620}
   m_Layer: 0
   m_Name: SnowBallFightArt_37
   m_TagString: Untagged
@@ -5859,6 +5982,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2136227620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136227617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dcb2166515451c8309a0433890d584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someReference: {fileID: 0}
 --- !u!1 &2145487403
 GameObject:
   m_ObjectHideFlags: 0
@@ -6129,7 +6265,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2437902625474019105, guid: 006913249de2c30f4a23b6f992f57669, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971605591}
   m_SourcePrefab: {fileID: 100100000, guid: 006913249de2c30f4a23b6f992f57669, type: 3}
 --- !u!1001 &8495346868068872004
 PrefabInstance:
@@ -6202,7 +6341,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8038896808286727427, guid: 2723a5eb85d11e2b5b59034313f34db7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 472483685}
   m_SourcePrefab: {fileID: 100100000, guid: 2723a5eb85d11e2b5b59034313f34db7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
