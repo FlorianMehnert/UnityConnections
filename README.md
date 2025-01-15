@@ -58,9 +58,12 @@ Since I am only getting started with Unity, this section has still had a lot of 
 - required to rewrite nodes, connections, update logic for nodes, camera movement, dragging behavior
 - text cannot easily be contained in nodes since this would require the node sizes to be recalculated
 ![grid layout implementation](images/overlay_implementation_grid.gif)
+- radial layout iterating components and gameobjects of the given scene
+- ping mechanism to highlight/change objects on select
+![signs](images/signs.png)
+![signs2](images/signs2.png)
 
-## Current goals
-- implement better layout algorithms in 3DConnections showing off parent-child connections, optimize for none overlapping connections
-- [lag googles](https://www.curseforge.com/minecraft/mc-mods/laggoggles) like functionality to show time consumed by game objects (profiler for UnityScenes) 
-- add a ping mechanism to highlight/change objects on select
+## Current Goals
+- optimize for none overlapping connections
+- [lag googles](https://www.curseforge.com/minecraft/mc-mods/laggoggles) like functionality to show time consumed by game objects (profiler for UnityScenes)
 - improve selection behavior (select node whose center is closest to the cursor)
