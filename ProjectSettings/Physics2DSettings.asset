@@ -22,7 +22,7 @@ Physics2DSettings:
   m_ContactThreshold: 0
   m_JobOptions:
     serializedVersion: 2
-    useMultithreading: 0
+    useMultithreading: 1
     useConsistencySorting: 0
     m_InterpolationPosesPerJob: 100
     m_NewContactsPerJob: 30
@@ -42,7 +42,7 @@ Physics2DSettings:
   m_SimulationMode: 0
   m_SimulationLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_MaxSubStepCount: 4
   m_MinSubStepFPS: 30
   m_UseSubStepping: 0
