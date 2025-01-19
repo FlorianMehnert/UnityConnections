@@ -4,25 +4,25 @@ public class SnowBall : MonoBehaviour
 {
     public float ballSpeed;
 
-    public GameObject SnowballEffect;
+    public GameObject snowballEffect;
 
-    private Rigidbody2D theRB;
+    private Rigidbody2D _theRb;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        theRB = GetComponent<Rigidbody2D>();
+        _theRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        theRB.linearVelocity = new Vector2(ballSpeed * transform.localScale.x, 0);
+        _theRb.linearVelocity = new Vector2(ballSpeed * transform.localScale.x, 0);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(SnowballEffect, transform.position, transform.rotation);
+        Instantiate(snowballEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
