@@ -547,7 +547,6 @@ MonoBehaviour:
   isGrounded: 0
   snowBall: {fileID: 340257232822327308, guid: 122c3486ea1cca2c2ab2a4c183c2a9fd, type: 3}
   throwPoint: {fileID: 997980886}
-  reference: {fileID: 0}
 --- !u!50 &124891307
 Rigidbody2D:
   serializedVersion: 5
@@ -3504,7 +3503,6 @@ MonoBehaviour:
   isGrounded: 0
   snowBall: {fileID: 340257232822327308, guid: 122c3486ea1cca2c2ab2a4c183c2a9fd, type: 3}
   throwPoint: {fileID: 150683860}
-  reference: {fileID: 0}
 --- !u!95 &1107395010
 Animator:
   serializedVersion: 7
@@ -6146,9 +6144,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7f9400981af8eb96b8e388fc0521b84c, type: 2}
     - target: {fileID: 3956373290529461303, guid: 384e0468a917fb64a96f1fb6e1999e6d, type: 3}
-      propertyPath: toAnalyzeScene
+      propertyPath: overlayEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 06e6d946569f263da9e4331731efb6c9, type: 2}
+      objectReference: {fileID: 11400000, guid: 09b7fd6cf00581438b91b35f20ecbea4, type: 2}
     - target: {fileID: 5633069945008996577, guid: 384e0468a917fb64a96f1fb6e1999e6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 398.22195
