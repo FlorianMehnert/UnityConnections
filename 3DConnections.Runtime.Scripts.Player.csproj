@@ -77,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/Scripts/SceneAnalyzer.cs" />
+    <Reference Include="UnityEditor.CoreModule">
+      <HintPath>..\..\Unity\Hub\Editor\6000.0.25f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>
