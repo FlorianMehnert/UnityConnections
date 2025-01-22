@@ -48,22 +48,22 @@
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/de/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll" />
+    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/es/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/de/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ja/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/es/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
+    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/zh-Hant/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/it/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
@@ -137,12 +137,16 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Library/PackageCache/com.unity.modules.jsonserialize/package.json" />
     <None Include="Library/PackageCache/com.unity.burst/package.json" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/ThirdPartyNotices.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Inspector/component-header.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-window-item.uss" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.xml" />
     <None Include="Library/PackageCache/com.unity.modules.screencapture/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.cloth/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Controls/TabView/tab-view_light.uss" />
+    <None Include="Assets/Packages/System.Composition.Runtime.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Library/PackageCache/com.unity.test-framework.performance/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Distortion.hlsl" />
@@ -151,14 +155,12 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/common_light.uss" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ExposureHistogram.hlsl" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Roboto-Bold - License.txt" />
-    <None Include="Assets/Packages/System.Collections.Immutable.8.0.0/lib/netstandard2.0/System.Collections.Immutable.xml" />
     <None Include="Library/PackageCache/com.unity.modules.ai/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details-entity_light.uss" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/PieChart.uss" />
     <None Include="Library/PackageCache/com.unity.collections/Unity.Collections.LowLevel.ILSupport/README.txt" />
-    <None Include="Assets/Packages/System.Composition.Hosting.8.0.0/lib/netstandard2.0/System.Composition.Hosting.xml" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.xml" />
+    <None Include="Assets/Packages/System.Composition.Hosting.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Texture3DLerp.compute" />
     <None Include="Library/PackageCache/com.unity.ugui/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-component_light.uss" />
@@ -180,8 +182,8 @@
     <None Include="Library/PackageCache/com.unity.render-pipelines.universal-config/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Dithering.hlsl" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Bloom.shader" />
+    <None Include="Assets/Packages/System.Composition.AttributedModel.8.0.0/lib/netstandard2.0/System.Composition.AttributedModel.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/add-collection-item.uss" />
-    <None Include="Assets/Packages/System.Composition.Convention.8.0.0/lib/netstandard2.0/System.Composition.Convention.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Hierarchy/hierarchy-loading.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Preferences/preferences-value.uxml" />
     <None Include="Library/PackageCache/com.unity.modules.assetbundle/package.json" />
@@ -194,8 +196,8 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Preferences/preferences-value.uss" />
     <None Include="Library/PackageCache/com.unity.render-pipelines.core/Shaders/CoreCopy.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
+    <None Include="Assets/Packages/System.Composition.Hosting.8.0.0/lib/netstandard2.0/System.Composition.Hosting.xml" />
     <None Include="Library/PackageCache/com.unity.serialization/package.json" />
-    <None Include="Assets/Packages/System.Composition.Convention.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-inspector-components-tab.uss" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Lut3DBaker.compute" />
     <None Include="Library/PackageCache/com.unity.modules.imgui/package.json" />
@@ -205,7 +207,6 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/SystemSchedule/system-schedule-item.uss" />
     <None Include="Library/PackageCache/com.unity.modules.tilemap/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/Waveform.compute" />
-    <None Include="Assets/Packages/Humanizer.Core.2.14.1/lib/netstandard2.0/Humanizer.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/entity-info.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Journaling/entities-journaling-details-component.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ActiveBuildConfiguration/active-build-config-popup.uxml" />
@@ -221,6 +222,7 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/tag-component-element.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Preferences/preferences-setting.uxml" />
     <None Include="Library/PackageCache/com.unity.timeline/package.json" />
+    <None Include="Assets/Packages/System.Reflection.Metadata.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/PSSL.hlsl" />
     <None Include="Library/PackageCache/com.unity.modules.accessibility/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Inspector/entity-inspector-aspects-tab.uxml" />
@@ -229,7 +231,7 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-right-pane_dark.uss" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Hierarchy/hierarchy-loading.uxml" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml" />
+    <None Include="Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/StyleSheets/Extensions/common.uss" />
     <None Include="Library/PackageCache/com.unity.ide.visualstudio/ValidationConfig.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/LightMeter.shader" />
@@ -245,6 +247,7 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-window.uss" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Components/component-type-view.uxml" />
+    <None Include="Assets/Packages/System.Composition.AttributedModel.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/AutoExposure.compute" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Hierarchy/hierarchy-prefab-stage.uss" />
@@ -254,11 +257,11 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/foldout-without-action-button.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/build-configuration.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/null-string-field.uss" />
-    <None Include="Assets/Packages/System.Reflection.Metadata.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.visualscripting/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Components/components-window_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-inspector-relationships-tab.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details-entity_dark.uss" />
+    <None Include="Assets/Packages/System.IO.Pipelines.8.0.0/lib/netstandard2.0/System.IO.Pipelines.xml" />
     <None Include="Library/PackageCache/com.unity.collab-proxy/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ActiveBuildConfiguration/search-field.uxml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DiskKernels.hlsl" />
@@ -267,6 +270,7 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Controls/foldout-field.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Preferences/preferences-window.uxml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/D3D11.hlsl" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.CSharp.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample2.compute" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScalableAO.hlsl" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ProfilerModules/memory-profiler-right-pane.uxml" />
@@ -295,9 +299,10 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/common.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/SystemSchedule/system-schedule-item.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/section.uss" />
+    <None Include="Assets/Packages/System.Text.Encoding.CodePages.7.0.0/lib/netstandard2.0/System.Text.Encoding.CodePages.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Common/entity-view.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/add-collection-item.uxml" />
-    <None Include="Assets/Packages/System.Composition.TypedParts.8.0.0/lib/netstandard2.0/System.Composition.TypedParts.xml" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Workspaces.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Inspector/entity-field.uxml" />
     <None Include="Library/PackageCache/com.unity.modules.unityanalytics/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/build-configuration-dependency.uxml" />
@@ -307,12 +312,11 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Common/system-list-view.uxml" />
     <None Include="Library/PackageCache/com.unity.searcher/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.video/package.json" />
-    <None Include="Assets/Packages/System.Composition.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" />
-    <None Include="Assets/Packages/System.Composition.AttributedModel.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-popup_light.uss" />
     <None Include="Library/PackageCache/com.unity.shadergraph/ValidationConfig.json" />
     <None Include="Library/PackageCache/com.unity.ide.rider/ValidationExceptions.json" />
+    <None Include="Assets/Packages/System.Collections.Immutable.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.test-framework/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/entity-query-header.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Controls/TabView/tab-view.uss" />
@@ -327,30 +331,30 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/build-component.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/search-field_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/classic-build-profile_light.uss" />
-    <None Include="Assets/Packages/System.IO.Pipelines.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Controls/foldout-field_light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/structural-changes-profiler-window_dark.uss" />
+    <None Include="Assets/Packages/System.Composition.Convention.8.0.0/lib/netstandard2.0/System.Composition.Convention.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVO.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Inspector/entity-header.uxml" />
     <None Include="Library/PackageCache/com.unity.modules.particlesystem/package.json" />
-    <None Include="Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/useSharedDesignerContext.txt" />
-    <None Include="Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.xml" />
+    <None Include="Assets/Packages/System.Threading.Channels.7.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/Vectorscope.shader" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/D3D9.hlsl" />
-    <None Include="Assets/3DConnections/ProjectSettings/ProjectVersion.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/null-string-field.uxml" />
     <None Include="Library/PackageCache/com.unity.toolchain.linux-x86_64/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-window_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Journaling/entities-journaling-details.uxml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScalableAO.shader" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/ACES.hlsl" />
+    <None Include="Assets/Packages/System.Text.Encoding.CodePages.7.0.0/useSharedDesignerContext.txt" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/FinalPass.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/circular-reference.uxml" />
     <None Include="Library/PackageCache/com.unity.modules.physics2d/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.CSharp.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.xml" />
     <None Include="Library/PackageCache/com.unity.modules.vr/package.json" />
+    <None Include="Assets/Packages/System.Composition.Runtime.8.0.0/lib/netstandard2.0/System.Composition.Runtime.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/Histogram.compute" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/Switch.hlsl" />
     <None Include="Library/PackageCache/com.unity.visualscripting/ValidationExceptions.json" />
@@ -359,16 +363,17 @@
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Uber.shader" />
     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-field.uss" />
-    <None Include="Assets/Packages/System.Composition.AttributedModel.8.0.0/lib/netstandard2.0/System.Composition.AttributedModel.xml" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Components/components-window.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-inspector-aspects-tab_light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details_light.uss" />
     <None Include="Library/PackageCache/com.unity.2d.common/package.json" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
+    <None Include="Assets/Packages/System.Composition.Convention.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/type-inspector.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/header.uss" />
     <None Include="Library/PackageCache/com.unity.ide.visualstudio/ValidationExceptions.json" />
+    <None Include="Assets/Packages/System.Reflection.Metadata.8.0.0/lib/netstandard2.0/System.Reflection.Metadata.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ProfilerModules/memory-profiler-tree-view-item.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/complicated-type-test.uxml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/xRLib.hlsl" />
@@ -376,6 +381,7 @@
     <None Include="Library/PackageCache/com.unity.modules.wind/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/structural-changes-profiler-window_light.uss" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details.uss" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Library/PackageCache/com.unity.modules.umbra/package.json" />
@@ -383,21 +389,20 @@
     <None Include="Library/PackageCache/com.unity.toolchain.linux-x86_64/ValidationConfig.json" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-tree-view-item.uss" />
-    <None Include="Assets/Packages/System.Composition.Hosting.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-left-pane_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ActiveBuildConfiguration/active-build-config-window-item.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Search/search-element-filter-popup.uss" />
     <None Include="Library/PackageCache/com.unity.2d.tilemap.extras/package.json" />
-    <None Include="Assets/Packages/System.Reflection.Metadata.8.0.0/lib/netstandard2.0/System.Reflection.Metadata.xml" />
-    <None Include="Assets/Packages/System.Composition.Runtime.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.florian-mehnert.scene-connections/package.json" />
     <None Include="Library/PackageCache/com.unity.physics/pvpExceptions.json" />
+    <None Include="Assets/Packages/System.Composition.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Debug/Overlays.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/variables_light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Journaling/entities-journaling-details-entity.uxml" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/PSP2.hlsl" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Search/search-element.uxml" />
+    <None Include="Assets/Packages/System.IO.Pipelines.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.modules.audio/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/classic-build-profile.uss" />
@@ -424,30 +429,32 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/system.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/display-list.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/SystemSchedule/system-schedule-header.uxml" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.CSharp.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.xml" />
+    <None Include="Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/build-configuration-dependency_light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-field_dark.uss" />
+    <None Include="Assets/3DConnections/ProjectSettings/ProjectVersion.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Hierarchy/hierarchy-toolbar.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/component-attribute.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/search-element.uss" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequestwww/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/set-element-default.uss" />
-    <None Include="Assets/Packages/System.Composition.TypedParts.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/entity-header.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/variables.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/ActiveBuildConfiguration/active-build-config-popup-item.uxml" />
+    <None Include="Assets/Packages/System.Composition.TypedParts.8.0.0/lib/netstandard2.0/System.Composition.TypedParts.xml" />
     <None Include="Library/PackageCache/com.unity.entities/pvpExceptions.json" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequestaudio/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/CopyStd.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-popup-item.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details-component_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Common/system-dependency-view.uxml" />
-    <None Include="Assets/Packages/System.Threading.Channels.7.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/autocomplete_light.uss" />
+    <None Include="Assets/Packages/Humanizer.Core.2.14.1/lib/netstandard2.0/Humanizer.xml" />
     <None Include="Library/PackageCache/com.unity.feature.2d/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Controls/foldout-field_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/circular-reference.uss" />
+    <None Include="Assets/3DConnections/Assets/Fonts/Source_Sans_3/README.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-window-item_dark.uss" />
     <None Include="Library/PackageCache/com.unity.modules.hierarchycore/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/dots-editor-common_light.uss" />
@@ -460,17 +467,16 @@
     <None Include="Assets/3DConnections/Shaders/NodeComputeShader.compute" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/entity-view.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Hierarchy/hierarchy.uss" />
-    <None Include="Assets/Packages/System.Collections.Immutable.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.2d.aseprite/ValidationExceptions.json" />
-    <None Include="Assets/Packages/System.Composition.Runtime.8.0.0/lib/netstandard2.0/System.Composition.Runtime.xml" />
     <None Include="Library/PackageCache/com.unity.modules.xr/package.json" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MotionBlur.shader" />
+    <None Include="Assets/Packages/System.Composition.TypedParts.8.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.profiling.core/package.json" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/ThirdPartyNotices.txt" />
     <None Include="Library/PackageCache/com.unity.ugui/Editor Resources/Shaders/TMP_Properties.cginc" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute" />
-    <None Include="Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" />
+    <None Include="Assets/3DConnections/Assets/Fonts/Source_Sans_3/OFL.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/build-configuration.uxml" />
+    <None Include="Assets/Packages/Microsoft.CodeAnalysis.CSharp.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/SystemSchedule/system-schedule_dark.uss" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Fog.hlsl" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ExposureHistogram.compute" />
@@ -492,22 +498,20 @@
     <None Include="Library/PackageCache/com.github-glitchenzo.nugetforunity/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Content/entity-query.uss" />
     <None Include="Library/PackageCache/com.unity.modules.terrain/package.json" />
+    <None Include="Assets/3DConnections/Assets/Fonts/Permanent_Marker/LICENSE.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Hierarchy/hierarchy-toolbar.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-right-pane_light.uss" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/GaussianDownsample.compute" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Search/search-element-filter-popup.uxml" />
     <None Include="Library/PackageCache/com.unity.2d.sprite/package.json" />
-    <None Include="Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/useSharedDesignerContext.txt" />
     <None Include="Assets/3DConnections/Packages/manifest.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/memory-profiler-component.uss" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.xml" />
     <None Include="Assets/3DConnections/Packages/packages-lock.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/variables_dark.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-window.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/search-field_light.uss" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/ScreenSpaceReflections.hlsl" />
     <None Include="Library/PackageCache/com.unity.collections/package.json" />
-    <None Include="Assets/Packages/System.Text.Encoding.CodePages.7.0.0/lib/netstandard2.0/System.Text.Encoding.CodePages.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/install-quick-search-popup.uxml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Hierarchy/hierarchy-prefab-stage.uxml" />
     <None Include="Library/PackageCache/com.unity.modules.androidjni/package.json" />
@@ -519,12 +523,12 @@
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/API/D3D12.hlsl" />
     <None Include="Assets/3DConnections/Shaders/NodeRendererShader.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Components/components-window.uss" />
-    <None Include="Assets/Packages/Microsoft.CodeAnalysis.Workspaces.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/DepthOfField.shader" />
     <None Include="Library/PackageCache/com.unity.ugui/PackageConversionData_Assets.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/StyleSheets/Extensions/dark.uss" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Journaling/entities-journaling-details-entity.uss" />
+    <None Include="Assets/Packages/System.Collections.Immutable.8.0.0/lib/netstandard2.0/System.Collections.Immutable.xml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Builtins/SubpixelMorphologicalAntialiasing.hlsl" />
     <None Include="Library/PackageCache/com.unity.entities/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ProfilerModules/structural-changes-profiler-window.uss" />
@@ -543,9 +547,8 @@
     <None Include="Library/PackageCache/com.unity.2d.animation/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/build-configuration-dependency.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Spinner/spinner.uss" />
-    <None Include="Assets/Packages/System.IO.Pipelines.8.0.0/lib/netstandard2.0/System.IO.Pipelines.xml" />
+    <None Include="Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/build-configuration_light.uss" />
-    <None Include="Assets/Packages/System.Text.Encoding.CodePages.7.0.0/useSharedDesignerContext.txt" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/StyleSheets/Extensions/light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/SystemSchedule/system-schedule-toolbar.uss" />
     <None Include="Library/PackageCache/com.unity.collections/ValidationExceptions.json" />
@@ -563,7 +566,6 @@
     <None Include="Library/PackageCache/com.unity.modules.uielements/package.json" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/search-field.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Inspector/inspector.uss" />
-    <None Include="Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uxml/build-component.uxml" />
     <None Include="Library/PackageCache/com.unity.postprocessing/PostProcessing/Shaders/Colors.hlsl" />
     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne.json" />
@@ -573,6 +575,7 @@
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/ActiveBuildConfiguration/active-build-config-window-item_light.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uss/Common/centered-message-element.uss" />
     <None Include="Library/PackageCache/com.unity.physics/ValidationExceptions.json" />
+    <None Include="Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/Unity.Entities.UI/uss/set-element.uss" />
     <None Include="Library/PackageCache/com.unity.entities/Editor Default Resources/uxml/Common/component-view.uxml" />
     <None Include="Library/PackageCache/com.unity.multiplayer.center/package.json" />
@@ -924,74 +927,65 @@
     <Reference Include="UnityEditor.XRModule">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed/UnityEngine/UnityEditor.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Collections.Immutable.8.0.0/lib/netstandard2.0/System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.TypedParts">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.TypedParts.8.0.0/lib/netstandard2.0/System.Composition.TypedParts.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.CodePages">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Text.Encoding.CodePages.7.0.0/lib/netstandard2.0/System.Text.Encoding.CodePages.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.collections/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="System.Composition.Convention">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Convention.8.0.0/lib/netstandard2.0/System.Composition.Convention.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.dll</HintPath>
-    </Reference>
-    <Reference Include="Ookii.Dialogs">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/3DConnections/Runtime/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_v2">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.bundle_green.2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll</HintPath>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.CSharp.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Pipelines">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.IO.Pipelines.8.0.0/lib/netstandard2.0/System.IO.Pipelines.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Workspaces.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/3DConnections/Runtime/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
     </Reference>
-    <Reference Include="Humanizer">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Humanizer.Core.2.14.1/lib/netstandard2.0/Humanizer.dll</HintPath>
+    <Reference Include="System.Composition.TypedParts">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.TypedParts.8.0.0/lib/netstandard2.0/System.Composition.TypedParts.dll</HintPath>
     </Reference>
-    <Reference Include="System.Composition.Runtime">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Runtime.8.0.0/lib/netstandard2.0/System.Composition.Runtime.dll</HintPath>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Hosting.8.0.0/lib/netstandard2.0/System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.bundle_green.2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Text.Encoding.CodePages.7.0.0/lib/netstandard2.0/System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
     </Reference>
     <Reference Include="System.Reflection.Metadata">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Reflection.Metadata.8.0.0/lib/netstandard2.0/System.Reflection.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.CSharp.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.core">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.core.2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.AttributedModel">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.AttributedModel.8.0.0/lib/netstandard2.0/System.Composition.AttributedModel.dll</HintPath>
+    <Reference Include="System.Composition.Convention">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Convention.8.0.0/lib/netstandard2.0/System.Composition.Convention.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Channels">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.AttributedModel">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.AttributedModel.8.0.0/lib/netstandard2.0/System.Composition.AttributedModel.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.nuget.mono-cecil/Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Runtime.8.0.0/lib/netstandard2.0/System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Workspaces.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Collections.Immutable.8.0.0/lib/netstandard2.0/System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.CSharp.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
@@ -999,14 +993,23 @@
     <Reference Include="System.Windows.Forms">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/3DConnections/Runtime/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.provider.e_sqlite3.2.1.10/lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Humanizer.Core.2.14.1/lib/netstandard2.0/Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
     </Reference>
-    <Reference Include="System.Composition.Hosting">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Hosting.8.0.0/lib/netstandard2.0/System.Composition.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.provider.e_sqlite3.2.1.10/lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.core.2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -1443,6 +1446,10 @@
     <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
       <Project>{4f49ab9c-5f2b-0fd1-34b8-21a3c069fc2e}</Project>
       <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SimpleFileBrowser.Runtime.csproj">
+      <Project>{8fa686f5-e213-cc46-8837-a8bcc6d7c32f}</Project>
+      <Name>SimpleFileBrowser.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.csproj">
       <Project>{8c3c9688-04fd-11da-bffa-5b3af411cdbf}</Project>
