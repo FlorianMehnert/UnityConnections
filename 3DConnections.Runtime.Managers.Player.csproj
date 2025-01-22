@@ -741,6 +741,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="3DConnections.Runtime.csproj">
+      <Project>{d8e1cf87-a2e6-b250-1eda-ff34b203bae8}</Project>
+      <Name>3DConnections.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="3DConnections.Runtime.ScriptableObjects.Player.csproj">
       <Project>{37743061-a94c-4e68-1dc7-207090b786fc}</Project>
       <Name>3DConnections.Runtime.ScriptableObjects.Player</Name>
