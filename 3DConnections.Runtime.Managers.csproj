@@ -929,6 +929,14 @@
       <Project>{b423768a-6549-4b35-b20b-ab8d3e7e47e8}</Project>
       <Name>3DConnections.Runtime.Nodes</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{76a03a92-fa44-973a-1a26-c4e3db809e2c}</Project>
+      <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{37c1c69e-863d-57eb-2e18-99b6c9cce6e9}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>
