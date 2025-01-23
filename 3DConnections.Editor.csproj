@@ -76,10 +76,10 @@
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Editor/SceneAnalyzerColorsEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/SceneReferenceEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/SelectionManagerEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/GameObjectListDisplayEditor.cs" />
-    <Compile Include="Assets/3DConnections/Editor/CameraControlerEditor.cs" />
     <None Include="Assets/3DConnections/Editor/3DConnections.Editor.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -937,6 +937,10 @@
     <ProjectReference Include="3DConnections.Runtime.Managers.csproj">
       <Project>{9dd3e4df-4664-3490-80c7-0b376bb77198}</Project>
       <Name>3DConnections.Runtime.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Scripts.csproj">
+      <Project>{4924ccb5-91b7-2ee8-7c15-962c5116f4c5}</Project>
+      <Name>3DConnections.Runtime.Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>

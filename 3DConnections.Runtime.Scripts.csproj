@@ -921,6 +921,14 @@
       <Project>{4a1ffc05-62bf-7229-984e-a6836f2b8c02}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Utils.csproj">
+      <Project>{ecfdb72d-4af7-dad8-225a-f4d04e3ce6f2}</Project>
+      <Name>3DConnections.Runtime.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="3DConnections.Editor.CustomTags.csproj">
+      <Project>{c67670e2-05a3-e700-3cbd-6a5284b161a8}</Project>
+      <Name>3DConnections.Editor.CustomTags</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>
