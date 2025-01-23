@@ -949,6 +949,10 @@
       <Project>{4a1ffc05-62bf-7229-984e-a6836f2b8c02}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Events.csproj">
+      <Project>{0c0ece35-7535-5a8a-12d1-80b5dbad58cb}</Project>
+      <Name>3DConnections.Runtime.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>

@@ -11,7 +11,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>3DConnections.Runtime.Scripts</RootNamespace>
     <ProjectGuid>{4924ccb5-91b7-2ee8-7c15-962c5116f4c5}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -928,6 +928,10 @@
     <ProjectReference Include="3DConnections.Editor.CustomTags.csproj">
       <Project>{c67670e2-05a3-e700-3cbd-6a5284b161a8}</Project>
       <Name>3DConnections.Editor.CustomTags</Name>
+    </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Events.csproj">
+      <Project>{0c0ece35-7535-5a8a-12d1-80b5dbad58cb}</Project>
+      <Name>3DConnections.Runtime.Events</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
