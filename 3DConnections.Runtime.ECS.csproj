@@ -528,9 +528,6 @@
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="NuGetForUnity.PluginAPI">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.github-glitchenzo.nugetforunity/Editor/PluginAPI/NuGetForUnity.PluginAPI.dll</HintPath>
-    </Reference>
     <Reference Include="System.Threading.Channels">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.dll</HintPath>
     </Reference>

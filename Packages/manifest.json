@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "com.florian-mehnert.scene-connections": "https://github.com/FlorianMehnert/SceneConnections.git",
-    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.entities": "1.3.8",
     "com.unity.feature.2d": "2.0.1",
