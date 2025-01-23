@@ -917,6 +917,10 @@
       <Project>{6d8b0906-4167-e5f0-e4bd-c2d53062fa0b}</Project>
       <Name>3DConnections.Runtime.Burst</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{4a1ffc05-62bf-7229-984e-a6836f2b8c02}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>
