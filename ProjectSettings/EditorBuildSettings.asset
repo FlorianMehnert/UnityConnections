@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3DConnections/Assets/Scenes/OverlayScene.unity
     guid: d52e99f55af300277a17fbb0e9cd41f0
+  - enabled: 1
+    path: Assets/3DConnections/Assets/Scenes/minimalScene.unity
+    guid: 76f07888c6c053e0d9e37a00b0b9b00e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
