@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Editor/SceneAnalyzerColorsEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/SceneReferenceEditor.cs" />
+    <Compile Include="Assets/3DConnections/Editor/CopySceneToAssets.cs" />
     <Compile Include="Assets/3DConnections/Editor/SelectionManagerEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/GameObjectListDisplayEditor.cs" />
     <None Include="Assets/3DConnections/Editor/3DConnections.Editor.asmdef" />
