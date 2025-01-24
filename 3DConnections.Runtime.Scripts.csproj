@@ -429,9 +429,6 @@
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="NuGetForUnity.PluginAPI">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.github-glitchenzo.nugetforunity/Editor/PluginAPI/NuGetForUnity.PluginAPI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
@@ -841,13 +838,13 @@
       <Project>{86eebf3a-db27-54c0-fcde-af2d9f6753aa}</Project>
       <Name>3DConnections.Runtime.Managers.Scene</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{078e5236-bdd5-ebd2-dab2-215f1de4771e}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{078e5236-bdd5-ebd2-dab2-215f1de4771e}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
