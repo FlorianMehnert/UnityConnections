@@ -41,36 +41,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/pt-BR/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/ja/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/zh-Hant/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/de/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/es/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/de/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ja/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/es/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/zh-Hant/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/it/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/pt-BR/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/vb/it/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
-    <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Analyzers.3.3.4/analyzers/dotnet/cs/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll" />
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
@@ -437,32 +407,14 @@
     <Reference Include="UnityEditor.LinuxStandalone.Extensions">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Collections.Immutable">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Collections.Immutable.8.0.0/lib/netstandard2.0/System.Collections.Immutable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.TypedParts">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.TypedParts.8.0.0/lib/netstandard2.0/System.Composition.TypedParts.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.CodePages">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Text.Encoding.CodePages.7.0.0/lib/netstandard2.0/System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.collections/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Convention">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Convention.8.0.0/lib/netstandard2.0/System.Composition.Convention.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/3DConnections/Runtime/StandaloneFileBrowser/Plugins/Ookii.Dialogs.dll</HintPath>
@@ -473,29 +425,8 @@
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.collab-proxy/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_v2">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.bundle_green.2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Pipelines">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.IO.Pipelines.8.0.0/lib/netstandard2.0/System.IO.Pipelines.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.Workspaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.Workspaces.Common.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Humanizer">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Humanizer.Core.2.14.1/lib/netstandard2.0/Humanizer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Runtime">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Runtime.8.0.0/lib/netstandard2.0/System.Composition.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.collab-proxy/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Metadata">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Reflection.Metadata.8.0.0/lib/netstandard2.0/System.Reflection.Metadata.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.CSharp.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.collab-proxy/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
@@ -503,23 +434,11 @@
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
-    <Reference Include="SQLitePCLRaw.core">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.core.2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.AttributedModel">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.AttributedModel.8.0.0/lib/netstandard2.0/System.Composition.AttributedModel.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Channels">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Threading.Channels.7.0.0/lib/netstandard2.1/System.Threading.Channels.dll</HintPath>
+    <Reference Include="NuGetForUnity.PluginAPI">
+      <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.github-glitchenzo.nugetforunity/Editor/PluginAPI/NuGetForUnity.PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.visualscripting/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
@@ -527,20 +446,8 @@
     <Reference Include="Mono.Cecil">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.nuget.mono-cecil/Mono.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.CSharp.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms">
       <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/3DConnections/Runtime/StandaloneFileBrowser/Plugins/System.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.12.0/lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Composition.Hosting">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/System.Composition.Hosting.8.0.0/lib/netstandard2.0/System.Composition.Hosting.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
-      <HintPath>/home/florian/RiderProjects/UnityConnections/Assets/Packages/SQLitePCLRaw.provider.e_sqlite3.2.1.10/lib/netstandard2.0/SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -918,13 +825,13 @@
       <Project>{b423768a-6549-4b35-b20b-ab8d3e7e47e8}</Project>
       <Name>3DConnections.Runtime.Nodes</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{078e5236-bdd5-ebd2-dab2-215f1de4771e}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
