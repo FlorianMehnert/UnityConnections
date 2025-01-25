@@ -46,6 +46,7 @@
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/PhysicsSimulationConfiguration.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/ComponentNode.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeType.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeColorsScriptableObject.cs" />
