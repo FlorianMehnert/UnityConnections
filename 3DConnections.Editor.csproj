@@ -49,6 +49,7 @@
     <Compile Include="Assets/3DConnections/Editor/SceneAnalyzerColorsEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/SceneReferenceEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/CopySceneToAssets.cs" />
+    <Compile Include="Assets/3DConnections/Editor/SceneAnalyzerIgnoredTypesListEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/AddEntryPointPrefabContext.cs" />
     <Compile Include="Assets/3DConnections/Editor/SelectionManagerEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/AddLayerScript.cs" />
