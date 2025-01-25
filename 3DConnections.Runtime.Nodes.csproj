@@ -11,7 +11,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>3DConnections.Runtime.Nodes</RootNamespace>
     <ProjectGuid>{b423768a-6549-4b35-b20b-ab8d3e7e47e8}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -46,7 +46,10 @@
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeType.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeConnection.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeConnections.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Nodes/Node.cs" />
     <None Include="Assets/3DConnections/Runtime/Nodes/3DConnections.Runtime.Nodes.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

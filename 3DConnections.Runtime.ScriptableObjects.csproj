@@ -48,12 +48,9 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/PhysicsSimulationConfiguration.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/ComponentNode.cs" />
-    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeType.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeColorsScriptableObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/SceneReference.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/GameobjectNode.cs" />
-    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/Node.cs" />
-    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeConnections.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/RadialLayout.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/OverlaySceneScriptableObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeGraphScriptableObject.cs" />
