@@ -46,6 +46,7 @@
     <Analyzer Include="/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Editor/FocusOnObject.cs" />
     <Compile Include="Assets/3DConnections/Editor/SceneAnalyzerColorsEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/SceneReferenceEditor.cs" />
     <Compile Include="Assets/3DConnections/Editor/CopySceneToAssets.cs" />
