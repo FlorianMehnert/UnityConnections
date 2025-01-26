@@ -50,6 +50,7 @@
     <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeConnection.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeConnections.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/TreeNode.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Nodes/CycleDetection.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/Node.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
