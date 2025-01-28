@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/GUI/GUIBuilder.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/GUI/KeyDisplay.cs" />
     <None Include="Assets/3DConnections/Runtime/GUI/3DConnections.Runtime.GUI.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

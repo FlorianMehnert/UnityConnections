@@ -870,6 +870,10 @@
       <Project>{44d9025a-8ca5-8d3c-d817-e072f97204c6}</Project>
       <Name>Unity.Multiplayer.Center.Common.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.SimpleJSON.Player.csproj">
+      <Project>{9e8656f6-7360-5569-fe3d-ae6d012e3ab1}</Project>
+      <Name>3DConnections.Runtime.SimpleJSON.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Transforms.Player.csproj">
       <Project>{450a436a-be33-4a55-efb8-ecbd03ff6384}</Project>
       <Name>Unity.Transforms.Player</Name>
