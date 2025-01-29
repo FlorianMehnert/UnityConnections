@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/Burst/SpringSimulation.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Burst/ComputeSpringSimulation.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Burst/ILogable.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/Burst/SpringSimulation.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Burst/ComputeSpringSimulation.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Burst/ILogable.cs" />
     <None Include="Assets/3DConnections/Runtime/Burst/3DConnections.Runtime.Burst.asmdef" />
     <None Include="Assets/3DConnections/Runtime/Burst/SpringSimulation.compute" />
     <Reference Include="UnityEngine">

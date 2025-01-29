@@ -58,6 +58,7 @@
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Runtime/GUI/FPSDisplay.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GUIBuilder.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GalaxyTripShaderControler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/KeyDisplay.cs" />
@@ -686,6 +687,10 @@
     <ProjectReference Include="3DConnections.Runtime.Managers.Scene.Player.csproj">
       <Project>{3a40e7c3-0086-7d3e-316a-77af165da6a8}</Project>
       <Name>3DConnections.Runtime.Managers.Scene.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Nodes.Player.csproj">
+      <Project>{3b666006-d281-9b61-8f15-67d5dc87ff5d}</Project>
+      <Name>3DConnections.Runtime.Nodes.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{f0bd01cb-f936-6c09-e813-188dd553c0ed}</Project>
