@@ -702,6 +702,10 @@
       <Project>{d1a871e0-e81c-53f3-2604-7e638f81eb94}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Nodes.Layout.Player.csproj">
+      <Project>{c8cd74cb-89ba-91f2-4062-b80e8ff4032f}</Project>
+      <Name>3DConnections.Runtime.Nodes.Layout.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
       <Project>{da07728c-a630-e637-0428-020779a07ecf}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>

@@ -861,6 +861,10 @@
       <Project>{b423768a-6549-4b35-b20b-ab8d3e7e47e8}</Project>
       <Name>3DConnections.Runtime.Nodes</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Nodes.Layout.csproj">
+      <Project>{da11872e-17dd-cb77-2aa6-5a9edfc13496}</Project>
+      <Name>3DConnections.Runtime.Nodes.Layout</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>

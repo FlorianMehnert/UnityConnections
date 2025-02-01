@@ -52,7 +52,6 @@
     <Compile Include="Assets/3DConnections/Runtime/Managers/Entrypoint3DConnections.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Managers/SelectionManager.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Managers/NodeBuilder.cs" />
-    <Compile Include="Assets/3DConnections/Runtime/Managers/ConnectionsBasedForestManager.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Managers/CameraHandler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Managers/NodeConnectionManager.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Managers/Project/ClassParser.cs" />
@@ -846,6 +845,10 @@
     <ProjectReference Include="3DConnections.Runtime.Utils.csproj">
       <Project>{ecfdb72d-4af7-dad8-225a-f4d04e3ce6f2}</Project>
       <Name>3DConnections.Runtime.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Nodes.Layout.csproj">
+      <Project>{da11872e-17dd-cb77-2aa6-5a9edfc13496}</Project>
+      <Name>3DConnections.Runtime.Nodes.Layout</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
