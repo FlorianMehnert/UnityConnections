@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeType.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/NodeConnection.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Nodes/ColoredObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/TreeNode.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/CycleDetection.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Nodes/Node.cs" />
@@ -636,6 +637,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="3DConnections.Runtime.Managers.Scene.Player.csproj">
+      <Project>{3a40e7c3-0086-7d3e-316a-77af165da6a8}</Project>
+      <Name>3DConnections.Runtime.Managers.Scene.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{f0bd01cb-f936-6c09-e813-188dd553c0ed}</Project>
       <Name>UnityEngine.UI.Player</Name>

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/Scripts/CodeMetrics.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/Scripts/ColorPickerControler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Scripts/SceneAnalyzer.cs" />
     <Compile Include="Assets/3DConnections/Runtime/Scripts/Metric.cs" />
     <None Include="Assets/3DConnections/Runtime/Scripts/3DConnections.Runtime.Scripts.asmdef" />

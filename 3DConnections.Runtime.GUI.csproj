@@ -58,6 +58,7 @@
     <Analyzer Include="/home/florian/RiderProjects/UnityConnections/Library/PackageCache/com.unity.entities/Unity.Entities/SourceGenerators/Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/3DConnections/Runtime/GUI/DynamicCanvasScaler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/FPSDisplay.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GUIBuilder.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GalaxyTripShaderControler.cs" />
