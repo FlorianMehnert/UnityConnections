@@ -829,6 +829,10 @@
       <Project>{0c0ece35-7535-5a8a-12d1-80b5dbad58cb}</Project>
       <Name>3DConnections.Runtime.Events</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{37c1c69e-863d-57eb-2e18-99b6c9cce6e9}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{9010fa70-518c-1bf1-2357-26007f32a332}</Project>
       <Name>UnityEditor.UI</Name>

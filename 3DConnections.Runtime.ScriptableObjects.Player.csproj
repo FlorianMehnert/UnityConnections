@@ -651,6 +651,10 @@
       <Project>{5fea28be-e0f3-2049-565c-8b0cc2c6d59d}</Project>
       <Name>3DConnections.Runtime.Events.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Player.csproj">
+      <Project>{2a02e39b-334e-be42-baaa-ddae78e3685c}</Project>
+      <Name>Unity.Mathematics.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{f0bd01cb-f936-6c09-e813-188dd553c0ed}</Project>
       <Name>UnityEngine.UI.Player</Name>
