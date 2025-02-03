@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/PhysicsSimulationConfiguration.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/ComponentNode.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/LayoutParameters.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeColorsScriptableObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/SceneReference.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/GameobjectNode.cs" />
@@ -403,6 +404,9 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
