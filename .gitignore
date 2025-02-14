@@ -15,6 +15,16 @@ videos
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
+/.utmp/*
+WebGL Builds/
+unity_connections_Data/*
+*.blob
+*.zip
+lib_burst_generated.txt
+libdecor-*
+unity_connections.x86_64
+*.so
+
 
 # IDE generated
 .vs/
@@ -34,3 +44,9 @@ videos
 *.mdb
 *.opendb
 *.VC.db
+
+# Other
+*.dll
+
+# Release builds
+v0.*
