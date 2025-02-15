@@ -60,10 +60,12 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/GUI/DynamicCanvasScaler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/FPSDisplay.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/GUI/PhysicSimUI.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GUIBuilder.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/DebugOverlay.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GalaxyTripShaderControler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/KeyDisplay.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/GUI/SettingsMenuGeneral.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/home/florian/Unity/Hub/Editor/6000.0.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>
