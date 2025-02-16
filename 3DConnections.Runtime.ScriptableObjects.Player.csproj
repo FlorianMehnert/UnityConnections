@@ -52,6 +52,7 @@
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeColorsScriptableObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/SceneReference.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/GameobjectNode.cs" />
+    <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/SimulationType.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/NodeConnectionsScriptableObject.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/RadialLayout.cs" />
     <Compile Include="Assets/3DConnections/Runtime/ScriptableObjects/OverlaySceneScriptableObject.cs" />
