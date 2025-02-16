@@ -60,7 +60,6 @@
   <ItemGroup>
     <Compile Include="Assets/3DConnections/Runtime/GUI/DynamicCanvasScaler.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/FPSDisplay.cs" />
-    <Compile Include="Assets/3DConnections/Runtime/GUI/PhysicSimUI.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GUIBuilder.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/DebugOverlay.cs" />
     <Compile Include="Assets/3DConnections/Runtime/GUI/GalaxyTripShaderControler.cs" />
