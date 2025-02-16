@@ -699,6 +699,10 @@
       <Project>{c8cd74cb-89ba-91f2-4062-b80e8ff4032f}</Project>
       <Name>3DConnections.Runtime.Nodes.Layout.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="3DConnections.Runtime.Utils.Player.csproj">
+      <Project>{08122a2f-f046-548b-f9e1-aa2d1cfe0284}</Project>
+      <Name>3DConnections.Runtime.Utils.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{f0bd01cb-f936-6c09-e813-188dd553c0ed}</Project>
       <Name>UnityEngine.UI.Player</Name>
