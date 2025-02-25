@@ -50,3 +50,7 @@ unity_connections.x86_64
 
 # Release builds
 v0.*
+
+# allow working on both SceneConnections and the 3DConnections extensions
+Assets/3DConnections*
+Assets/SceneConnections*
