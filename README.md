@@ -50,12 +50,12 @@ Since I am only getting started with Unity, this section has still had a lot of 
 - simple and easy to use allowing to focus on important tasks such as how to visualize node connections
 
 ### [3DConnections](https://github.com/FlorianMehnert/3DConnections/)
-- at runtime scene overlay using main prefabs to display 3D nodes
-- can be toggled
-- works with prefabs
-- integrates better into the rendering pipeline resulting in a better performance
-- required to rewrite nodes, connections, update logic for nodes, camera movement, dragging behavior
-- text cannot easily be contained in nodes since this would require the node sizes to be recalculated
+- requires 3DConnectionsEntrypoint Gameobject in the scene to analyze
+- requires the scene to be in playmode to work
+- can be toggled using F1
+- allows positioning nodes using radial, tree and force-directed layout
+- Toggle the start menu using Escape
+- basic controller support
 ![grid layout implementation](images/overlay_implementation_grid.gif)
 - radial layout iterating components and gameobjects of the given scene
 - ping mechanism to highlight/change objects on select
@@ -63,6 +63,7 @@ Since I am only getting started with Unity, this section has still had a lot of 
 ![signs2](images/signs2.png)
 
 ## Current Goals
-- optimize for none overlapping connections
-- [lag googles](https://www.curseforge.com/minecraft/mc-mods/laggoggles) like functionality to show time consumed by game objects (profiler for UnityScenes)
 - improve selection behavior (select node whose center is closest to the cursor)
+- add 3D-Overlay to view gameObjects and their connections during runtime
+- for 2D add different strengths for component/parent-child connections
+- add mobile controls
