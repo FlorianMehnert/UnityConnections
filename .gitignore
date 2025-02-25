@@ -52,5 +52,7 @@ unity_connections.x86_64
 v0.*
 
 # allow working on both SceneConnections and the 3DConnections extensions
-Assets/3DConnections*
-Assets/SceneConnections*
+Assets/3DConnections
+Assets/3DConnections.meta
+Assets/SceneConnections
+Assets/SceneConnections.meta

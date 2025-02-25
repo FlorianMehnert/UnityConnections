@@ -1,16 +1,15 @@
 # UnityConnections
 
-The goal of this project is to understand complicated UnityScenes by visualizing the underlying structure using various references.
-
 ## Setup
 Since I am only getting started with Unity, this section has still had a lot of steps to take by hand
 1. `git clone https://github.com/FlorianMehnert/UnityConnections.git`
-2. in the Assets folder remove the 3DConnections file e.g. `rm Assets/3DConnections`
-3. `git clone https://github.com/FlorianMehnert/3DConnections.git Assets/3DConnection`
-4. open UnityConnections as a Unity project
-5. download the unity package for the standalone file browser and import into unity Assets → Import Package → Custom Package
-6. install [NuGet](https://github.com/GlitchEnzo/NuGetForUnity?tab=readme-ov-file#how-do-i-install-nugetforunity)
-7. in NuGet search for Microsoft.CodeAnalysis and Microsoft.CodeAnalysis.CSharp and install these packages (a version in this project is 4.12.0 for both. on linux, you might also need to install SQLitePCLRaw.bundle_green if workspaces fail to compile 
+2. `git clone https://github.com/FlorianMehnert/3DConnections.git Assets/3DConnection`
+3. open UnityConnections as a Unity project
+4. download the unity package for the standalone file browser and import into unity Assets → Import Package → Custom Package
+ 
+## If you want to use roslyn on linux:
+5. install [NuGet](https://github.com/GlitchEnzo/NuGetForUnity?tab=readme-ov-file#how-do-i-install-nugetforunity)
+6. in NuGet search for Microsoft.CodeAnalysis and Microsoft.CodeAnalysis.CSharp and install these packages (a version in this project is 4.12.0 for both. on linux, you might also need to install SQLitePCLRaw.bundle_green if workspaces fail to compile 
 
 
 ## Progress
