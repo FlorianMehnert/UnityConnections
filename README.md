@@ -2,8 +2,6 @@
 
 ## Setup
 
-Since I am only getting started with Unity, this section has still had a lot of steps to take by hand
-
 1. `git clone https://github.com/FlorianMehnert/UnityConnections.git`
 2. (optional) `git clone https://github.com/FlorianMehnert/3DConnections.git`
 3. (optional) `git clone https://github.com/FlorianMehnert/SceneConnections.git`
