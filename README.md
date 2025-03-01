@@ -8,7 +8,7 @@
 4. Create a symbolic link in the Assets folder pointing to the Extension you want to work on
 
 - on linux: `ln -s <FULL-PATH-TO-3DConnections> <FULL-PATH-TO-UnityConnections>/Assets/3DConnections`
-- on windows (PowerShell session as elevated administrator): `New-Item -ItemType SymbolicLink -Path <ABSOLUTE-PATH-TO-UnityConnections>/Assets/3DConnections -Target <ABSOLUTE-PATH-TO-3DConnections>`
+- on windows (PowerShell session as elevated administrator): `New-Item -ItemType SymbolicLink -Path <ABSOLUTE-PATH-TO-UnityConnections>/Assets/3DConnections -Target <ABSOLUTE-PATH-TO-3DConnections>` eg. `New-Item -ItemType SymbolicLink -Path C:\Users\flori\RiderProjects\UnityConnections\Assets\3DConnections -Value C:\Users\flori\RiderProjects\3DConnections`
 
 5. open UnityConnections as a Unity project
 6. download the unity package for the standalone file browser and import into unity Assets → Import Package → Custom Package
