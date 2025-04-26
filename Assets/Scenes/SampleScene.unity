@@ -5163,6 +5163,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3DConnectionsLoadOverlay
       objectReference: {fileID: 0}
+    - target: {fileID: 1483144410903611745, guid: 384e0468a917fb64a96f1fb6e1999e6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5633069945008996577, guid: 384e0468a917fb64a96f1fb6e1999e6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 398.22195
