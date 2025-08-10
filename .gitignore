@@ -56,3 +56,6 @@ Assets/3DConnections
 Assets/3DConnections.meta
 Assets/SceneConnections
 Assets/SceneConnections.meta
+
+# remove fonts
+Assets/TextMesh Pro/
