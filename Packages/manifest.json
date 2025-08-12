@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.innogames.asset-relations-viewer": "https://github.com/innogames/asset-relations-viewer.git",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.connect.share": "4.2.3",
