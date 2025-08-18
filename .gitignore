@@ -47,6 +47,7 @@ unity_connections.x86_64
 
 # Other
 *.dll
+App.config
 
 # Release builds
 v0.*
