@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/3DConnections/Assets/Scenes/minimalScene.unity
     guid: 76f07888c6c053e0d9e37a00b0b9b00e
   - enabled: 1
-    path: Assets/3DConnections/Assets/Scenes/TestingEventsScene.unity
+    path: Assets/Scenes/TestingEventsScene.unity
     guid: 92cee847f586006409622ed763afa5c9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: aa1b8fb32da84c042bd935c894cc9cc0, type: 2}
